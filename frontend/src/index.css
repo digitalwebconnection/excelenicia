@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+
+/* ─── Shared Design Tokens (used by landing page + main site) ── */
+@theme {
+  --color-gold:       #c1972d;
+  --color-gold-light: #d4af5a;
+  --color-gold-dark:  #9a7620;
+  --color-ink:        #0A0A0A;
+  --color-ivory:      #F8F6F1;
+  --color-muted:      #6b7280;
+  --color-border:     #e5e4e7;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
+
+  --radius-sm: 2px;
+}
+
+/* ─── Global Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scrolling — do not set smooth here */
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #fff;
+  color: #374151;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+}
+
+/* ─── Utility Classes (Landing Page) ─────────────────────────── */
+
+/* Gold divider rule */
+.gold-rule {
+  display: inline-block;
+  height: 1px;
+  width: 40px;
+  background-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* Section eyebrow text */
+.section-header-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+/* Hero overlay gradient */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.88) 0%,
+    rgba(30, 58, 138, 0.55) 100%
+  );
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #c1972d, #1e3a8a);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: filter 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Primary button small variant */
+.btn-primary-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(to right, #c1972d, #1e3a8a);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: filter 0.2s, transform 0.2s;
+}
+.btn-primary-sm:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* ─── Animations ──────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.fade-in-up-delay {
+  animation: fadeInUp 0.7s 0.2s ease both;
+}
+
+@keyframes menuItemIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-menu-item {
+  animation: menuItemIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+/* ─── Rich Text Content — Link Styling ────────────────────────── */
+/* Links added via the admin rich text editor should look like     */
+/* normal text (same color, no underline) but still be clickable. */
+.why-study-content a,
+.edu-content a,
+.course-content a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.why-study-content a:hover,
+.edu-content a:hover,
+.course-content a:hover {
+  text-decoration: none;
+  color: inherit;
+}
