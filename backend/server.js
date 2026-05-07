@@ -20,7 +20,9 @@ app.use(cors({
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      console.warn(`[CORS] Blocked request from origin: ${origin}`);
+      console.warn(`[CORS] Allowed origins: ${allowedOrigins.join(', ')}`);
+      callback(new Error(`CORS: Origin '${origin}' not allowed`));
     }
   },
   credentials: true,
