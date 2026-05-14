@@ -61,9 +61,10 @@ const WhyStudy = ({ data }: SectionProps) => {
             {data.title}
           </h2>
           {data.intro && (
-            <p className="text-gray-600 text-lg max-w-6xl mx-auto">
-              {data.intro}
-            </p>
+            <div 
+              className="text-gray-600 text-lg max-w-6xl mx-auto intro-content"
+              dangerouslySetInnerHTML={{ __html: data.intro }}
+            />
           )}
         </motion.div>
 
