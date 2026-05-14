@@ -5,8 +5,11 @@ import { Users, CheckCircle, ShieldCheck, Headphones } from "lucide-react";
 const Counter = ({ value, start }) => {
   const [count, setCount] = useState(0);
 
+  // Skip animation for strings like "24/7"
+  const isSpecial = value.includes('/');
+
   useEffect(() => {
-    if (!start) return;
+    if (!start || isSpecial) return;
 
     const numericValue = parseInt(value.replace(/[^0-9]/g, ""));
     if (isNaN(numericValue)) return;
@@ -28,7 +31,9 @@ const Counter = ({ value, start }) => {
     }, stepTime);
 
     return () => clearInterval(timer);
-  }, [value, start]);
+  }, [value, start, isSpecial]);
+
+  if (isSpecial) return <>{value}</>;
 
   const suffix = value.replace(/[0-9]/g, "");
 
