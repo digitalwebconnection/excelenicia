@@ -68,7 +68,7 @@ const WhyStudy = ({ data }: SectionProps) => {
           )}
         </motion.div>
 
-        {/* CONTENT */}
+        {/*CONTENT*/}
         <div className="space-y-14">
           {data.points.map((item, index) => (
             <motion.div
