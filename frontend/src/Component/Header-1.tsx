@@ -10,12 +10,25 @@ const Header = () => {
   const [destinations, setDestinations] = useState<{ name: string; path: string }[]>([]);
 
   useEffect(() => {
+    const cached = localStorage.getItem("destinations_cache");
+    if (cached) {
+      try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setDestinations(JSON.parse(cached));
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (e) {
+        // ignore JSON parse error
+      }
+    }
+
     const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
     fetch(`${API}/countries`)
       .then(r => r.json())
       .then(data => {
         if (Array.isArray(data)) {
-          setDestinations(data.map((c: any) => ({ name: c.name, path: c.code })));
+          const formatted = data.map((c: any) => ({ name: c.name, path: c.code }));
+          setDestinations(formatted);
+          localStorage.setItem("destinations_cache", JSON.stringify(formatted));
         }
       })
       .catch(() => { });
