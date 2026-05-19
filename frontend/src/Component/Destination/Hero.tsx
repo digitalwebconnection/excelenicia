@@ -31,7 +31,7 @@ const navigate = useNavigate();
   }, [images]);
 
   return (
-    <section className="relative h-140 flex items-center overflow-hidden">
+    <section className="relative h-[500px] md:h-[600px] flex items-center overflow-hidden">
 
       {/* 🔥 BACKGROUND SLIDER WITH FADE */}
       <AnimatePresence>
@@ -56,7 +56,7 @@ const navigate = useNavigate();
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-black/10 " />
 
       {/* CONTENT */}
-      <div className="relative max-w-7xl  px-6 md:px-15   text-white">
+      <div className="relative max-w-7xl  px-6 md:px-16   text-white">
 
         {/* LEFT */}
         <motion.div

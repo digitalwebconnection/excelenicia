@@ -7,6 +7,7 @@ import WhyStudy from "./WhyStudy";
 import EducationSection from "./EducationSystem";
 import Documents from "./Documents";
 import IntakeSection from "./ListSection";
+import destinationsData from "./destinationsData";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
@@ -18,16 +19,57 @@ const DestinationPage = () => {
 
   useEffect(() => {
     if (!country) return;
-    setLoading(true);
-    setError("");
-    fetch(`${API}/countries/${country.toLowerCase()}`)
+
+    const normalizedCountry = country.toLowerCase();
+    const cacheKey = `country_detail_cache_${normalizedCountry}`;
+
+    // 1. Try to load from localStorage cache first
+    let initialData = null;
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      try {
+        initialData = JSON.parse(cached);
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    // 2. If no cache, check if we have local static data in destinationsData
+    if (!initialData && destinationsData[normalizedCountry as keyof typeof destinationsData]) {
+      initialData = destinationsData[normalizedCountry as keyof typeof destinationsData];
+    }
+
+    if (initialData) {
+      setPageData(initialData);
+      setLoading(false);
+      setError("");
+    } else {
+      setPageData(null); // Clear previous page data to avoid showing old country
+      setLoading(true);
+      setError("");
+    }
+
+    // 3. Always fetch from server to get the latest data (stale-while-revalidate)
+    fetch(`${API}/countries/${normalizedCountry}`)
       .then(r => {
         if (!r.ok) throw new Error("Country not found");
         return r.json();
       })
-      .then(data => setPageData(data))
-      .catch(e => setError(e.message))
-      .finally(() => setLoading(false));
+      .then(data => {
+        setPageData(data);
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+        setError("");
+      })
+      .catch(e => {
+        // Only show error if we don't have any cached or fallback data
+        if (!initialData) {
+          setError(e.message || "Failed to load destination data");
+        }
+        console.warn("Failed to fetch fresh country data:", e);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [country]);
 
   if (loading) return (

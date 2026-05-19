@@ -3,24 +3,40 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/image1.png";
 
+const DEFAULT_DESTINATIONS = [
+  { name: "United Kingdom", path: "uk" },
+  { name: "USA", path: "usa" },
+  { name: "Canada", path: "canada" },
+  { name: "Germany", path: "germany" },
+  { name: "Australia", path: "australia" },
+  { name: "UAE", path: "uae" },
+  { name: "France", path: "france" },
+  { name: "Italy", path: "italy" },
+  { name: "Spain", path: "spain" },
+  { name: "New Zealand", path: "new-zealand" },
+  { name: "Malta", path: "malta" },
+  { name: "Latvia", path: "latvia" },
+  { name: "Lithuania", path: "lithuania" },
+  { name: "Austria", path: "austria" }
+];
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [destinations, setDestinations] = useState<{ name: string; path: string }[]>([]);
-
-  useEffect(() => {
+  const [destinations, setDestinations] = useState<{ name: string; path: string }[]>(() => {
     const cached = localStorage.getItem("destinations_cache");
     if (cached) {
       try {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setDestinations(JSON.parse(cached));
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        return JSON.parse(cached);
       } catch (e) {
-        // ignore JSON parse error
+        // ignore
       }
     }
+    return DEFAULT_DESTINATIONS;
+  });
 
+  useEffect(() => {
     const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
     fetch(`${API}/countries`)
       .then(r => r.json())

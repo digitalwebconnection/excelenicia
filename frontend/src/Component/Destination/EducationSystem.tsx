@@ -51,7 +51,7 @@ const EducationSection = ({ data }: SectionProps) => {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
 
         {/* RIGHT SIDE (TIMELINE) */}
-        <div className="relative order-2 lg:order-2">
+        <div className="relative order-1 lg:order-2">
 
           {/* LINE */}
           <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-linear-to-r from-[#c1972d] to-blue-900" />
@@ -104,7 +104,7 @@ const EducationSection = ({ data }: SectionProps) => {
         </div>
 
         {/* LEFT SIDE (CONTENT) */}
-        <div className="sticky top-14 order-1 lg:order-1">
+        <div className="sticky top-14 order-2 lg:order-1">
           <motion.div
             key={activeIndex}
             initial={{ opacity: 0, y: 40 }}
