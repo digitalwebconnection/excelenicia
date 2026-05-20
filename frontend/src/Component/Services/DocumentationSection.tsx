@@ -59,17 +59,17 @@ const DocumentationSection = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-blue-950 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
             Documentation That{" "}
-            <span className="text-[#c1972d]">Gets You Approved</span>
+            <span className="text-blue-950">Gets You Approved</span>
           </h2>
 
-          <p className="text-gray-600 text-justify text-base md:text-lg leading-relaxed">
+          <p className="text-blue-950 text-justify text-base md:text-lg leading-relaxed">
             Your documentation can make or break your admission and visa approval.
             We ensure every document meets global standards and strengthens your application.
           </p>
 
-          <div className="border-l-4 text-justify border-[#c1972d] pl-4 text-gray-700">
+          <div className="border-l-4 text-justify border-[#c1972d] pl-4 text-blue-950">
             A well-prepared SOP, strong documentation, and error-free submission
             significantly increase your chances of success.   We guide you through document sorting, reviewing, and final submission —
           ensuring accuracy, clarity, and maximum impact for your application success.
@@ -95,10 +95,10 @@ const DocumentationSection = () => {
 
               {/* Content */}
               <div>
-                <h3 className="font-semibold text-gray-900">
+                <h3 className="font-semibold text-blue-950">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-blue-950">
                   {item.desc}
                 </p>
               </div>

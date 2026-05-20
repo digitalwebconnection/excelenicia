@@ -57,16 +57,16 @@ export default function OurWayOfCounseling() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <p className="  tracking-[0.35em] text-blue-950 font-bold text-md mb-4">
+          <p className="  tracking-[0.15em] text-blue-950 font-bold text-md mb-4">
             WHY EXCELENCIA INTERNATIONAL
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-serif  font-black tracking-tight text-[#c1972d] leading-tight">
-            Not Just Admissions.
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
+            Not Just Admissions. <br />
             <span className="text-blue-950"> Life Decisions.</span>
           </h2>
 
-          <p className="mt-6 text-md md:text-xl text-slate-700 font-medium max-w-7xl mx-auto">
+          <p className="mt-6 text-md md:text-xl text-blue-950 font-medium max-w-7xl mx-auto">
           We also believe that each student’s path is unique and deserves individual attention on our part, founded on honesty and accountability.
           </p>
         </motion.div>
@@ -94,12 +94,12 @@ export default function OurWayOfCounseling() {
                 </div>
               </div>
               {/* Title */}
-              <h3 className="text-xl text-center font-bold mb-4 text-slate-900 transition-colors duration-700 group-hover:text-white">
+              <h3 className="text-xl text-center font-bold mb-4 text-[#c1972d] transition-colors duration-700 group-hover:text-white">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p className="leading-relaxed  text-center text-slate-600 transition-colors duration-700 group-hover:text-white text-sm">
+              <p className="leading-relaxed  text-center text-blue-950 transition-colors duration-700 group-hover:text-white text-sm">
                 {step.desc}
               </p>
             </motion.div>

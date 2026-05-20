@@ -6,7 +6,6 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-  Code2,
 } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/image.png";
@@ -16,7 +15,6 @@ const Footer = () => {
   const quickLinks = [
     { name: "About Us", path: "/about" },
     { name: "Our Services", path: "/services" },
-    { name: "Free Webinar", path: "/webinar" },
     { name: "Contact Us", path: "/contact" },
   ];
   const socialLinks = [
@@ -50,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#ffffff] border-t border-[#c1972d]">
+    <footer className="bg-[#ffffff]  border-t border-[#c1972d]">
       {/* MAIN FOOTER */}
       <div className="max-w-7xl mx-auto px-6 py-5 md:py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
@@ -73,7 +71,7 @@ const Footer = () => {
 
         {/* QUICK LINKS */}
         <div>
-          <h4 className="text-blue-950 font-semibold text-lg mb-2">
+          <h4 className="text-blue-950 font-serif font-semibold text-lg mb-2">
             Quick Links
           </h4>
 
@@ -97,7 +95,7 @@ const Footer = () => {
 
         {/* SERVICES */}
         <div>
-          <h4 className="text-blue-950 font-semibold text-lg mb-2">
+          <h4 className="text-blue-950 font-serif font-semibold text-lg mb-2">
             Our Services
           </h4>
 
@@ -117,7 +115,7 @@ const Footer = () => {
 
         {/* CONTACT INFO */}
         <div>
-          <h4 className="text-blue-950 font-semibold text-lg mb-2">
+          <h4 className="text-blue-950 font-serif font-semibold text-lg mb-2">
             Contact Us
           </h4>
 
@@ -177,14 +175,14 @@ const Footer = () => {
 
       {/* BOTTOM BAR */}
       <div className="border-t bg-[#010d20] border-[#020f24]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center text-sm text-white">
+        <div className="max-w-7xl mx-auto font-serif px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center text-sm text-white">
 
           <p>
             © {new Date().getFullYear()} Excelencia International. All Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-2 text-white text-[13px] md:text-sm mt-2 md:mt-0">
-            <Code2 className="w-5 h-5 text-[#c1972d]" />
+          <div className="flex items-center gap-2 text-white text-[13px] md:text-xl mt-2 md:mt-0">
+      
             <span>
               Developed by{" "}
               <a

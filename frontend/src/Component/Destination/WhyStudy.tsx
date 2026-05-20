@@ -57,12 +57,12 @@ const WhyStudy = ({ data }: SectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-blue-950 mb-4 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#c1972d] font-serif mb-4 max-w-3xl mx-auto">
             {data.title}
           </h2>
           {data.intro && (
             <div 
-              className="text-gray-600 text-lg max-w-6xl mx-auto intro-content"
+              className="text-blue-950 text-lg max-w-6xl mx-auto intro-content"
               dangerouslySetInnerHTML={{ __html: data.intro }}
             />
           )}
@@ -119,21 +119,21 @@ const WhyStudy = ({ data }: SectionProps) => {
               <div className={index % 2 !== 0 ? "md:pr-10" : "md:pl-10"}>
                 <motion.h3
                   variants={itemVariants}
-                  className="text-2xl md:text-3xl font-bold text-blue-950 mb-4"
+                  className="text-2xl md:text-3xl font-bold text-[#c1972d] mb-4"
                 >
                   {item.title}
                 </motion.h3>
 
                 <motion.p
                   variants={itemVariants}
-                  className="text-[#c1972d]   mb-4 font-semibold uppercase tracking-wide text-sm"
+                  className="text-blue-950   mb-4 font-semibold uppercase tracking-wide text-sm"
                 >
                   {item.description}
                 </motion.p>
 
                 <motion.div
                   variants={itemVariants}
-                  className="why-study-content text-gray-600 text-justify leading-relaxed text-lg"
+                  className="why-study-content text-blue-950 text-justify leading-relaxed text-lg"
                   dangerouslySetInnerHTML={{ __html: item.full }}
                 />
 

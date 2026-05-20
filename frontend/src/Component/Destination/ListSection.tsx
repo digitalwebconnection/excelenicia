@@ -36,13 +36,13 @@ const IntakeSection = ({ data }: IntakeSectionProps) => {
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-blue-950 tracking-tight">
+          <h2 className="text-5xl font-bold text-[#c1972d] tracking-tight">
             {data.title}
           </h2>
           {data.subtitle && (
-            <p className="mt-2 text-slate-600 text-lg">{data.subtitle}</p>
+            <p className="mt-2 text-blue-950 text-lg">{data.subtitle}</p>
           )}
-          <p className="mt-3 text-slate-400 text-sm font-medium">
+          <p className="mt-3 text-blue-950 text-sm font-medium">
             Application deadlines usually fall 3–4 months prior to intake.
           </p>
         </div>
@@ -65,7 +65,7 @@ const IntakeSection = ({ data }: IntakeSectionProps) => {
                   <div className="flex flex-wrap items-center gap-3 mb-2">
 
                     {/* Intake Name */}
-                    <h3 className="text-2xl font-bold text-slate-800 group-hover:text-white">
+                    <h3 className="text-2xl font-bold text-blue-950 group-hover:text-white">
                       {item.name}
                     </h3>
 
@@ -76,7 +76,7 @@ const IntakeSection = ({ data }: IntakeSectionProps) => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-lg text-slate-600 leading-relaxed group-hover:text-white">
+                  <p className="text-lg text-blue-950 leading-relaxed group-hover:text-white">
                     {item.description}
                   </p>
                 </div>

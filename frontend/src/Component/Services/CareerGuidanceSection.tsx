@@ -15,7 +15,7 @@ const CareerGuidanceSection = () => {
           .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 20s linear infinite;
+            animation: marquee 30s linear infinite;
           }
           .marquee-container:hover .animate-marquee {
             animation-play-state: paused;
@@ -29,7 +29,7 @@ const CareerGuidanceSection = () => {
           {/* Static Location Label */}
           <div className="flex items-center gap-2 text-[#c1972d] bg-blue-950 z-10 pr-6 shrink-0">
             <MapPin size={16} />
-            <span className="text-lg font-bold tracking-[0.2em] whitespace-nowrap">
+            <span className="text-lg font-bold font-serif tracking-[0.2em] whitespace-nowrap">
               Our Services 
             </span>
           </div>
@@ -39,7 +39,7 @@ const CareerGuidanceSection = () => {
             <div className="animate-marquee flex gap-12 items-center">
               {/* First Set of Items */}
               {countries.map((country, index) => (
-                <span key={`1-${index}`} className="text-white/60 text-md font-bold tracking-widest whitespace-nowrap">
+                <span key={`1-${index}`} className="text-white/90 text-md font-bold font-serif tracking-widest whitespace-nowrap">
                   {country}
                 </span>
               ))}
@@ -65,17 +65,17 @@ const CareerGuidanceSection = () => {
             {/* Left Column: Visual & Core Title */}
             <div className="lg:col-span-5 space-y-8">
               <div className=' flex gap-10  items-centerF'>
-                <div className="inline-block p-3 bg-blue-950 rounded-2xl shadow-xl">
+                <div className="inline-block p-3 h-16 bg-blue-950 rounded-2xl shadow-xl">
                   <Compass className="text-[#c1972d] w-10 h-10" />
                 </div>
-                <h2 className="text-3xl md:text-5xl font-black text-blue-950 leading-[0.9] tracking-tighter">
+                <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
                   Career
-                  <span className="text-[#c1972d]"> Guidance</span>
+                  <span className="text-blue-950"> Guidance</span>
                 </h2>
               </div>
               {/* Paragraph 1 - Full Text */}
               <div className="relative pl-8 border-l-4 border-[#c1972d]">
-                <p className="text-xl text-justify text-slate-700 leading-relaxed ">
+                <p className="text-xl text-justify text-blue-950 leading-relaxed ">
                   The relevance of course selection, though not solely based on interest, is critical to career growth and employability both nationally and globally. This is where, at Excelencia International, our Career Guidance for Study Abroad in Mumbai gives you the right direction for your educational demands according to international job prospects and opportunities.
                 </p>
               </div>
@@ -96,7 +96,7 @@ const CareerGuidanceSection = () => {
               <div className="group bg-white p-10 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all border border-slate-100 border-t-4 border-t-blue-950">
                 <div className="flex items-start gap-6">
                   <Lightbulb className="text-[#c1972d] shrink-0" size={28} />
-                  <p className="text-slate-700 leading-loose">
+                  <p className="text-blue-950 leading-loose">
                     Students interested in a major might choose based solely on trends or peer pressure rather than the career outcomes and challenges associated with it. This is followed by in-depth discussions with our trained counsellors to get to know their unique strengths, passions, academic history, and future goals. Advising based on this analysis, with courses that have excellent employment prospects and are relevant globally.
                   </p>
                 </div>
@@ -105,8 +105,8 @@ const CareerGuidanceSection = () => {
               {/* Paragraph 3 - Full Text */}
               <div className="group bg-white p-10 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all border border-slate-100 border-t-4 border-t-blue-950">
                 <div className="flex items-start gap-6">
-                  <Globe2 className="text-blue-950 shrink-0" size={28} />
-                  <p className="text-slate-700 leading-loose">
+                  <Globe2 className="text-[#c1972d] shrink-0" size={28} />
+                  <p className="text-blue-950 leading-loose">
                     We examine areas of industry growth, salary trends, skill requirements, and post-study work avenues in the top destinations, including the UK, USA, Canada, and Australia. Such a strategy introduces students to degrees that lead to high return on investment and career security.
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const CareerGuidanceSection = () => {
                 <div className="flex items-start gap-6  ">
                   <Award size={32} className="text-[#c1972d] shrink-0" />
 
-                  <p className="text-slate-700 leading-loose ">
+                  <p className="text-blue-950 leading-loose ">
                     We are among the top study abroad consultancy in Mumbai, Bandra that aims to make not students, but global citizens for a better world. Before the students leave India, they know which specialisation to choose, what their job prospects would look like, and how they can carve out their professional journey even when they are with us through our career counselling.
                   </p>
                 </div>

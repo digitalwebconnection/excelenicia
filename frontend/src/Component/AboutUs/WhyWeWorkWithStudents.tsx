@@ -79,15 +79,15 @@ export default function WhyWeWorkWithStudents() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-50 text-blue-950 text-sm font-medium tracking-wide">
+          <span className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-50 text-blue-950 text-md font-medium tracking-wide">
             About Our Consultancy
           </span>
 
-          <h2 className="text-3xl md:text-5xl text-[#c1972d] font-extrabold leading-tight mb-6  ">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-6  ">
             Every Approval Letter <span className="text-blue-950"> Has A Journey Behind It</span>
           </h2>
 
-          <p className="text-gray-600 text-justify  text-md md:text-lg mb-10 max-w-xl">
+          <p className="text-blue-950 text-justify  text-md md:text-lg mb-10 max-w-xl">
             What you see is a visa stamp.
             What we see is months of preparation, planning, clarity, and confidence.
 
@@ -110,17 +110,17 @@ export default function WhyWeWorkWithStudents() {
                 </div>
                 <div>
                   <h3 className="font-bold text-blue-950 leading-tight">{item.title}</h3>
-                  <p className="text-xs text-gray-500">{item.desc}</p>
+                  <p className="text-xs text-gray-800">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <ul className="space-y-4 mb-4 md:mb-8">
-            <li className="flex items-center gap-3 text-gray-600 font-medium">
+            <li className="flex items-center gap-3 text-blue-950 font-medium">
               <span className="text-blue-950">≫</span> Success abroad isn’t luck.
             </li>
-            <li className="flex items-center gap-3 text-gray-600 font-medium">
+            <li className="flex items-center gap-3 text-blue-950 font-medium">
               <span className="text-blue-950">≫</span>It’s preparation meeting the right guidance.
             </li>
           </ul>

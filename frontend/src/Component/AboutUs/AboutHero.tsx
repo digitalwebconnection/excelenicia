@@ -83,7 +83,7 @@ const navigate = useNavigate();
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl md:text-5xl  font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl font-serif font-extrabold text-white">
               {slides[active].title}
               <span className=" text-[#c1972d]">
                 {slides[active].highlight}
@@ -99,13 +99,13 @@ const navigate = useNavigate();
             <div className="mt-5 md:mt-10 flex flex-wrap gap-4">
               <button
                onClick={() => navigate("/contact")}
-              className="px-3 md:px-7 py-1 md:py-3 rounded-full bg-[#c1972d] text-[#ffffff]
+              className="px-3 md:px-10 py-1 md:py-3 rounded-full bg-[#c1972d] text-[#ffffff]
                 font-semibold hover:scale-105 transition shadow-lg">
                 Apply Now →
               </button>
 
               <a
-              href="tel:+919769787211"   className="px-3 md:px-7 py-1 md:py-3 rounded-full border border-white/30
+              href="tel:+919769787211"   className="px-3 md:px-10 py-1 md:py-3 rounded-full border border-white/30
                 text-white hover:bg-white/10 transition backdrop-blur-sm">
                 Free Consultation
               </a>

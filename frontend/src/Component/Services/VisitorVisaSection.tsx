@@ -9,8 +9,8 @@ const VisitorVisaSection = () => {
         <div className=" text-center items-end mb-5 gap-6">
           <div className=" ">
 
-            <h2 className="text-3xl md:text-5xl font-black text-blue-950 leading-none md:leading-tight">
-              Visitor Visa <span className="text-[#c1972d]">Assistance</span>
+            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]  leading-none md:leading-tight">
+              Visitor Visa <span className="text-blue-950">Assistance</span>
             </h2>
           </div>
 
@@ -33,14 +33,14 @@ const VisitorVisaSection = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-8 md:p-10  group rounded-2xl shadow-xl">
               <FileText className="text-[#c1972d] group-hover:text-blue-950 mb-6" size={32} />
-              <p className="text-sm md:text-base leading-loose ">
+              <p className="text-sm md:text-base text-blue-950 group-hover:text-white leading-loose ">
                 Need to have appropriate documentation, proof of funds, travel intent demonstration, and immigration documents that you are eligible to get the visa. Mistakes — even minor ones — can lead to visa denials.” With the help of our experienced consultants, applicants walk through each step of the application process to submit as complete and accurate an application as possible.
               </p>
             </div>
 
             <div className="hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-8 md:p-10  group rounded-2xl shadow-xl">
               <CheckCircle2 className="text-[#c1972d] group-hover:text-blue-950 mb-6" size={32} />
-              <p className="text-sm md:text-base leading-loose ">
+              <p className="text-sm md:text-base text-blue-950 leading-loose group-hover:text-white ">
                 We also provide guidance for the submission of visitor visa documents, such as invitation letters, financial statements, travel itineraries, accommodation information, and supporting papers requested by embassies. Our team helps applicants to establish a genuine travel purpose and strong ties in India, two of the most decisive factors for granting a visa.
               </p>
             </div>

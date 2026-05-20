@@ -28,9 +28,9 @@ const InterviewDetailSection = () => {
           <h2 className="text-sm font-bold tracking-widest text-[#c1972d] uppercase mb-3">
             Mumbai - Bandra Expert Coaching
           </h2>
-          <h3 className="text-3xl md:text-5xl font-extrabold text-blue-950 leading-tight">
+          <h3 className="text-3xl md:text-5xl font-extrabold text-[#c1972d] font-serif leading-tight">
             Excelencia International <br />
-            <span className="text-[#c1972d] ">Student Visa Interview Preparation</span>
+            <span className="text-blue-950 ">Student Visa Interview Preparation</span>
           </h3>
 
         </div>
@@ -41,12 +41,12 @@ const InterviewDetailSection = () => {
           <div className="lg:col-span-7 space-y-8">
             <div className="relative p-8 bg-white rounded-2xl shadow-sm border border-slate-100">
               <Quote className="absolute -top-4 -left-7 text-[#c1972d] w-20 h-20 z-0" />
-              <p className="relative z-10 text-xl text-slate-700 leading-relaxed italic">
+              <p className="relative z-10 text-xl text-blue-950 leading-relaxed italic">
                 "One of the most pressing tasks before you can even think about studying abroad is getting your student visa. Excelencia International offers expert student visa assistance in Mumbai Bandra that helps students submit strong, accurate, well-prepared visa applications."
               </p>
             </div>
 
-            <div className="space-y-6 text-slate-600 text-md leading-relaxed">
+            <div className="space-y-6 text-blue-950 text-md leading-relaxed">
               <p>
                 Getting approved for a student visa requires proper documentation, financial proof that you can afford the cost, a genuine intent to study and compliance with immigration laws. Visa application forms, Financial statements, Sponsorship documents, Medical test, Biometric appointment & Credibility interview are processes students face while applying abroad and are mentored by our exceptionally experienced visa consultants.
               </p>
@@ -68,7 +68,7 @@ const InterviewDetailSection = () => {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-blue-950 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
               <div className="relative z-10">
-                <h4 className="text-2xl font-bold mb-6">What We Target:</h4>
+                <h4 className="text-2xl font-bold text-[#c1972d] font-serif mb-6">What We Target:</h4>
                 <div className="space-y-6">
                   {features.map((item, idx) => (
                     <div key={idx} className="flex gap-4">
@@ -88,7 +88,7 @@ const InterviewDetailSection = () => {
             </div>
 
             <div className="p-6 border-l-4 border-[#c1972d] bg-white">
-              <p className="text-slate-600 italic">
+              <p className="text-blue-950 ">
                 "Our professional student visa advice and personalised understanding enable us to boost visa acceptance rates, helping students confidently take that final step towards their dream of growing internationally."
               </p>
             </div>

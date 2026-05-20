@@ -66,13 +66,13 @@ export default function AboutSection() {
 
         {/* Header */}
         <div className="max-w-2xl mb-8 md:mb-12">
-          <h2 className="text-sm font-bold tracking-widest text-[#c1972d]   mb-3">
+          <h2 className="text-md font-bold tracking-widest text-blue-950   mb-3">
             Excellence Defined
           </h2>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            Why Choose Excelencia?
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
+            Why Choose <span className="text-blue-950">Excelencia?</span>
           </h2>
-          <div className="h-1.5 w-20 bg-[#c1972d] mt-6 rounded-full"></div>
+          <div className="h-1.5 w-20 bg-blue-950 mt-6 rounded-full"></div>
         </div>
 
         {/* Cards */}
@@ -91,11 +91,11 @@ export default function AboutSection() {
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#c1972d] transition-colors">
+              <h3 className="text-xl font-bold text-blue-950 mb-3 group-hover:text-[#c1972d] transition-colors">
                 {item.title}
               </h3>
 
-              <p className="text-slate-500 text-justify line-clamp-2 text-sm leading-relaxed mb-4">
+              <p className="text-blue-950 text-justify line-clamp-2 text-sm leading-relaxed mb-4">
                 {item.content}
               </p>
 
@@ -122,9 +122,9 @@ export default function AboutSection() {
               />
 
               {/* Modal */}
-              <motion.div
+              <motion.div 
                 layoutId={`card-${selected.title}`}
-                className="bg-white rounded-[1.2rem] md:rounded-[1.5rem] w-full max-w-5xl h-auto md:h-[550px] max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col md:grid md:grid-cols-2"
+                className="bg-white rounded-[1.2rem] md:rounded-3xl w-full max-w-5xl h-auto md:h-[550px] max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col md:grid md:grid-cols-2"
               >
                 {/* Close */}
                 <button
@@ -135,7 +135,7 @@ export default function AboutSection() {
                 </button>
 
                 {/* Image */}
-                <div className="relative h-48 sm:h-64 md:h-full flex-shrink-0 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full shrink-0 overflow-hidden">
                   <img
                     src={selected.image}
                     alt={selected.title}

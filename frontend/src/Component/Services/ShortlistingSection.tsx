@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export default function ShortlistingSection() {
-    const accentGold = "#c1972d";
+
 
     // Animation Variants
     const containerVariants = {
@@ -54,11 +54,11 @@ export default function ShortlistingSection() {
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl pb-10 md:text-5xl font-extrabold text-blue-950 leading-tight"
+                    className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-10"
                 >
 
-                    Country, Course, University
-                    <span style={{ color: accentGold }}> Shortlisting</span>
+                    Country, Course, University  
+                    <span className="text-blue-950">  Shortlisting</span>
                 </motion.h2>
 
                 <div className="grid text-left md:grid-cols-2 gap-10 items-start">
@@ -96,8 +96,8 @@ export default function ShortlistingSection() {
                                         className="mb-4 text-[#c1972d] group-hover:text-blue-950 group-hover:rotate-12 transition-transform duration-300"
                                         size={32}
                                     />
-                                    <h3 className="font-bold group-hover:text-white text-lg">{item.title}</h3>
-                                    <p className="group-hover:text-blue-200/70 text-sm mt-2 leading-snug">{item.desc}</p>
+                                    <h3 className="font-bold text-[#c1972d] group-hover:text-white text-lg">{item.title}</h3>
+                                    <p className="group-hover:text-blue-200/70 text-sm mt-2 text-blue-950 leading-snug">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -110,7 +110,7 @@ export default function ShortlistingSection() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="space-y-6 text-justify">
-                            <p className="text-gray-700 text-lg leading-relaxed">
+                            <p className="text-blue-950 text-lg leading-relaxed">
                                 Selecting the perfect place to study is one of the biggest decisions you will make throughout your life. With thousands of universities and programs on offer globally, it’s no wonder students become stressed. Explore the very best options with our Country, Course & University Shortlisting Service in Bandra, Mumbai, India.
                             </p>
 
@@ -129,7 +129,7 @@ export default function ShortlistingSection() {
                                     <div className="mt-1 bg-blue-950 p-1 rounded-full shrink-0">
                                         <ChevronRight size={16} className="text-[#c1972d]" />
                                     </div>
-                                    <p className="text-gray-600">{text}</p>
+                                    <p className="text-blue-950">{text}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -145,7 +145,7 @@ export default function ShortlistingSection() {
                     transition={{ delay: 0.5 }}
                     className="mt-10 p-8 rounded-2xl text-center"
                 >
-                    <p className="text-blue-950 text-lg md:text-xl max-w-6xl mx-auto italic font-medium">
+                    <p className="text-blue-950 text-lg md:text-xl max-w-7xl mx-auto  font-medium">
                         "Through our personal shortlisting service, students can benefit from a guided selection process and apply with confidence. The right course and university can change everything about your future, and we make sure you pick wisely."
                     </p>
                 </motion.div>

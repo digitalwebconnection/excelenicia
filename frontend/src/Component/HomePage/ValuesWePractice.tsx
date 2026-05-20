@@ -43,10 +43,10 @@ const StudentJourney = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         
         <div className="text-center mb-14">
-          <h2 className="text-3xl font-serif md:text-5xl font-bold text-[#c1972d] tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
             Our <span className="text-blue-950">Process</span>
           </h2>
-          <p className="mt-4 text-gray-500 text-sm md:text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-blue-950 font-medium text-sm md:text-lg max-w-xl mx-auto">
             A seamless, step-by-step guide to your international success.
           </p>
         </div>
@@ -90,10 +90,10 @@ const StudentJourney = () => {
 
               {/* CARD - flex-1 and h-full ensures fixed height parity across the row */}
               <div className="bg-white hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-6 md:p-8 rounded-3xl md:rounded-4xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-500/60 text-center flex flex-col w-full h-full min-h-60 md:min-h-70 transition-all duration-300 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] group-hover:-translate-y-2">
-                <h3 className="text-xl font-bold  mb-4 h-14 flex items-center justify-center">
+                <h3 className="text-xl font-bold text-[#c1972d]  mb-4 h-14 flex items-center group-hover:text-white justify-center">
                   {step.title}
                 </h3>
-                <p className="text-justify text-sm leading-relaxed grow">
+                <p className="text-justify text-sm leading-relaxed grow text-blue-950 group-hover:text-white">
                   {step.description}
                 </p>
                 

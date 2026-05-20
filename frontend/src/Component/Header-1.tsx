@@ -113,7 +113,24 @@ const Header = () => {
             </li>
 
             <li className="opacity-50 cursor-not-allowed">Collaborate</li>
-            <li className="opacity-50 cursor-not-allowed">Updates</li>
+
+            {/* 🔥 UPDATES DROPDOWN */}
+            <li className="relative group">
+              <span className="cursor-pointer hover:text-[#c1972d]">
+                Updates
+              </span>
+
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <ul className="flex flex-col p-4 gap-3 min-w-40">
+                  <NavLink
+                    to="/updates/blog"
+                    className="hover:text-[#c1972d]"
+                  >
+                    Blog
+                  </NavLink>
+                </ul>
+              </div>
+            </li>
 
             <li>
               <NavLink to="/Services" className="hover:text-[#c1972d]">
@@ -197,7 +214,22 @@ const Header = () => {
             </li>
 
             <li className="opacity-50">Collaborate</li>
-            <li className="opacity-50">Updates</li>
+
+            {/* 🔥 MOBILE UPDATES */}
+            <li>
+              <p className="font-semibold">Updates</p>
+
+              <ul className="ml-3 mt-2 flex flex-col gap-3">
+                <li onClick={() => setMenuOpen(false)}>
+                  <NavLink
+                    to="/updates/blog"
+                    className="hover:text-[#c1972d]"
+                  >
+                    Blog
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
 
             <li onClick={() => setMenuOpen(false)}>
               <NavLink to="/Services" className="hover:text-[#c1972d]">

@@ -36,7 +36,7 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="inline-block  px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest   bg-[#c1972d]/10 border border-[#c1972d]/30 text-[#c1972d] rounded-full"
+            className="inline-block  px-8 py-2 mb-4 text-xs font-semibold tracking-widest   bg-[#c1972d]/10 border border-[#c1972d]/30 text-[#c1972d] rounded-full"
           >
             Get In Touch
           </motion.span>
@@ -46,7 +46,7 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-3xl md:text-7xl font-extrabold tracking-tight mb-6"
+            className="text-3xl md:text-7xl font-serif font-extrabold tracking-tight mb-6"
           >
             Let’s build something{" "}
             <span className="text-[#c1972d]">together.</span>
@@ -57,7 +57,7 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-md md:text-lg text-slate-300 leading-relaxed"
+            className="text-md md:text-lg text-slate-100 leading-relaxed"
           >
             Whether you're in Mumbai or Dubai, our global team is ready to provide
             the guidance and technical solutions your business deserves.
@@ -123,7 +123,7 @@ function ContactMethodCard({ icon, label, value, href }: ContactMethodProps) {
   return (
     <a
       href={href}
-      className="flex items-center gap-5 p-4 md:p-8 rounded-2xl bg-black/30  backdrop-blur-md border border-white/10 hover:border-[#c1972d]/50 hover:bg-white/10 transition-all group"
+      className="flex items-center gap-5 p-4 md:p-8 rounded-lg bg-black/30  backdrop-blur-md border border-white/10 hover:border-[#c1972d]/50 hover:bg-white/10 transition-all group"
     >
       <div className="p-3 rounded-xl bg-[#c1972d]/10 text-[#c1972d] group-hover:scale-110 transition-transform">
         {icon}
@@ -161,7 +161,7 @@ function LocationCard({ country, address, tag, index, mapUrl }: LocationCardProp
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="relative group overflow-hidden rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 p-4 md:p-6 hover:border-[#c1972d]/60 transition-colors cursor-pointer h-full"
+      className="relative group overflow-hidden rounded-lg bg-black/30 backdrop-blur-md border border-white/10 p-4 md:p-6 hover:border-[#c1972d]/60 transition-colors cursor-pointer h-full"
     >
       <div className="relative z-10">
 
@@ -170,14 +170,14 @@ function LocationCard({ country, address, tag, index, mapUrl }: LocationCardProp
             <MapPin size={24} />
           </div>
 
-          <span className="text-[10px]   tracking-widest font-bold text-[#c1972d] bg-[#c1972d]/10 px-3 py-1 rounded-full">
+          <span className="text-[10px]  border border-white   tracking-widest font-bold text-[#c1972d] bg-[#c1972d]/10 px-3 py-1 rounded-full">
             {tag}
           </span>
         </div>
 
-        <h2 className="text-3xl font-bold mb-4">{country}</h2>
+        <h2 className="text-3xl font-bold font-serif text-[#c1972d] mb-4">{country}</h2>
 
-        <p className="text-slate-300 text-sm leading-relaxed mb-4 italic">
+        <p className="text-slate-100 text-sm leading-relaxed mb-4 ">
           "{address}"
         </p>
 

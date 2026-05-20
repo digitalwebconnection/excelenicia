@@ -35,7 +35,7 @@ export default function ImmigrationHero() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1]"
+              className="text-3xl md:text-5xl xl:text-6xl font-serif font-extrabold text-white leading-[1.1]"
             >
               Study Abroad. <br />
               <span className="text-[#c1972d]">Shape Your Future.</span>
@@ -46,7 +46,7 @@ export default function ImmigrationHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg text-white max-w-2xl mx-auto lg:mx-0"
             >
               Expert guidance for Student Visas, University Admissions, and
               Test Prep. Join 5,000+ students already studying in the UK, USA, Canada, and Australia.
@@ -79,13 +79,13 @@ export default function ImmigrationHero() {
 
             {/* Trust Points */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-4">
-              <div className="flex items-center gap-2 text-slate-300 text-sm">
+              <div className="flex items-center gap-2 text-slate-100 text-sm">
                 <CheckCircle className="w-4 h-4 text-[#c1972d]" /> Student Visa
               </div>
-              <div className="flex items-center gap-2 text-slate-300 text-sm">
+              <div className="flex items-center gap-2 text-slate-100 text-sm">
                 <CheckCircle className="w-4 h-4 text-[#c1972d]" /> Free Education
               </div>
-              <div className="flex items-center gap-2 text-slate-300 text-sm">
+              <div className="flex items-center gap-2 text-slate-100 text-sm">
                 <CheckCircle className="w-4 h-4 text-[#c1972d]" /> End-to-End Visa Support
               </div>
             </div>
@@ -131,8 +131,8 @@ export default function ImmigrationHero() {
                 <GraduationCap className="w-6 h-6 text-[#c1972d]" />
               </div>
               <div>
-                <p className="text-[10px] text-slate-400 font-bold  ">Enrollment</p>
-                <p className="text-sm font-bold text-slate-800 italic">800+ Partner Unis</p>
+                <p className="text-lg text-blue-950 font-bold  ">Enrollment</p>
+                <p className="text-sm font-bold text-slate-800 ">800+ Partner Unis</p>
               </div>
             </motion.div>
           </motion.div>

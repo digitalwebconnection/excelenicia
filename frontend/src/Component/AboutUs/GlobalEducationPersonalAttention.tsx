@@ -66,19 +66,19 @@ export default function GlobalEducationPersonalAttention() {
           {/* Section Subtitle with Decorative Line */}
           <div className="flex items-center gap-3 mb-4">
             <div className="h-0.5 w-10 bg-blue-950" />
-            <p className="text-xs tracking-[0.3em]   text-gray-900 font-bold">
+            <p className="text-md tracking-widest   text-gray-900 font-bold">
               Experience That Anticipates
             </p>
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-[1.1] text-[#c1972d]">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
             Decades of Insight.  <br />
             <span className="text-blue-950">Not Just Experience.</span>
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 text-justify text-md md:text-lg mb-8 leading-relaxed">
+          <p className="text-blue-950 text-justify text-md md:text-lg mb-8 leading-relaxed">
             With years of hands-on visa advisory experience, we’ve seen policies change, requirements tighten, and trends evolve. That experience allows us to anticipate challenges before they arise — not react after rejection.
           </p>
 
@@ -128,7 +128,7 @@ export default function GlobalEducationPersonalAttention() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
                onClick={() => navigate("/contact")}
-              className="px-10 py-5 rounded-lg text-white font-black text-sm   tracking-widest bg-linear-to-r from-[#c1972d] to-blue-950 hover:bg-blue-950 transition-all duration-300 shadow-lg shadow-[#c1972d]/20"
+              className="px-10 py-3 rounded-lg text-white font-black text-sm   tracking-widest bg-linear-to-r from-[#c1972d] to-blue-950 hover:bg-blue-950 transition-all duration-300 shadow-lg shadow-[#c1972d]/20"
             >
               Discover More
             </motion.button>

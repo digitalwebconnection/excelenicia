@@ -51,16 +51,16 @@ const FinanceSupportSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-3xl md:text-5xl font-black text-blue-950 leading-tight mb-2"
+            className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-2"
           >
             Financial Guidance for
-            <span className="text-[#c1972d] block">Your Global Journey</span>
+            <span className="text-blue-950 block">Your Global Journey</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={headerInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-xl text-slate-600 max-w-7xl mx-auto leading-relaxed"
+            className="text-xl text-blue-950 max-w-7xl mx-auto leading-relaxed"
           >
             Navigate the financial aspects of studying abroad with confidence. Our expert team provides comprehensive support to make international education accessible and stress-free.
           </motion.p>
@@ -99,11 +99,11 @@ const FinanceSupportSection = () => {
                     >
                       <Landmark size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold ">Cost Clarity</h3>
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-bold ">Cost Clarity</h3>
                   </div>
-                  <p className=" leading-relaxed text-justify">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     Cost is one of the primary worries students and parents have when it comes to international education. Our Education Finance Support at Excelencia International in Mumbai, Maharashtra, clarifies your tuition fees, living expenses, and funding options so you start your study abroad experience on the right track!
-                  </p>
+                  </span>
                 </motion.div>
               </div>
               <motion.div
@@ -138,11 +138,11 @@ const FinanceSupportSection = () => {
                     >
                       <ShieldCheck size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold">Budget Planning</h3>
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-bold">Budget Planning</h3>
                   </div>
-                  <p className="leading-relaxed opacity-95">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     Studying the curriculum overseas will demand some financial planning, covering tuition deposits, accommodation fees, visa charges, insurance and travel costs. Our experts guide families through how the entire financial framework works, and assist them with a realistic budget plan.
-                  </p>
+                  </span>
                 </motion.div>
               </div>
             </motion.div>
@@ -163,11 +163,11 @@ const FinanceSupportSection = () => {
                     >
                       <BadgeCheck size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold ">Loan & Scholarship Support</h3>
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-bold ">Loan & Scholarship Support</h3>
                   </div>
-                  <p className=" leading-relaxed text-justify">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     Assistance in education loan advice, scholarship info, sponsorship documents, and financial affidavit. To avoid delays or refusals, our team helps ensure that financial documents comply with both embassy and university standards.
-                  </p>
+                  </span>
                 </motion.div>
               </div>
               <motion.div
@@ -202,11 +202,11 @@ const FinanceSupportSection = () => {
                     >
                       <Globe size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold">Country-Specific Guidance</h3>
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-bold">Country-Specific Guidance</h3>
                   </div>
-                  <p className="leading-relaxed opacity-95">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     Being one of the top student visa consultants in Bandra, we have all the latest updates regarding individual countries like the UK, USA, Canada, and Australia when it comes to visa and its financial requirements. We help students understand how to maintain accurate bank statements, what GIC (if applicable) is required, and how to prepare strong financial proof.
-                  </p>
+                  </span>
                 </motion.div>
               </div>
             </motion.div>
@@ -227,11 +227,11 @@ const FinanceSupportSection = () => {
                     >
                       <Lightbulb size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold ">Stress-Free Approach</h3>
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-bold ">Stress-Free Approach</h3>
                   </div>
-                  <p className=" leading-relaxed text-justify ">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     We believe in a simple and tangible approach. Funding options are clearly explained so families can decide about funding without stress or confusion. Well, students get ready for their visa approval because of the proper financial preparation, and it also provides confidence and security to the student before traveling.
-                  </p>
+                  </span>
                 </motion.div>
               </div>
               <motion.div
@@ -266,11 +266,11 @@ const FinanceSupportSection = () => {
                     >
                       <ChartLine size={24} />
                     </motion.div>
-                    <h3 className="text-2xl font-bold "> Strategic Financial Planning for Global Futures</h3>
+                    <h3 className="text-2xl  text-[#c1972d] font-serif font-bold "> Strategic Financial Planning for Global Futures</h3>
                   </div>
-                  <p className="leading-relaxed opacity-95">
+                  <span className=" leading-relaxed text-blue-950  text-justify">
                     With proper strategic planning, right financial decisions equipped with expert counsel, International study becomes a realistic investment towards viable global futures.
-                  </p>
+                  </span>
                 </motion.div>
               </div>
             </motion.div>

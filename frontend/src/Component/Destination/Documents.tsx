@@ -62,7 +62,7 @@ const Documents = ({ data }: ListSectionProps) => {
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-5xl font-bold text-blue-950 mb-6"
+            className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-6"
           >
             {data.title}
           </motion.h2>
@@ -71,7 +71,7 @@ const Documents = ({ data }: ListSectionProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-lg md:text-xl"
+            className="text-blue-950 text-lg md:text-xl"
           >
             {data.subtitle}
           </motion.p>

@@ -5,12 +5,13 @@ import im2 from "../../assets/3.jpg"
 import { useNavigate } from "react-router-dom";
 export default function WhyGuidanceMatters() {
   const benefits = [
-    "World-class universities",
-    "Global career opportunities",
-    "Multicultural exposure",
-    "Stronger personal growth",
-    "A future without limits",
-  ];
+  "World-class universities",
+  "Global career opportunities",
+  "Multicultural exposure",
+  "Stronger personal growth",
+  "A future without limits",
+  "International networking ",
+];
 const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden bg-white py-20">
@@ -88,11 +89,11 @@ const navigate = useNavigate();
               Education Beyond Borders
             </span>
 
-            <h2 className="mt-4 text-4xl font-serif lg:text-4xl font-extrabold text-gray-950 leading-tight">
+            <h2 className="mt-4 text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
               It’s not just a degree; <br />
-              <span className="text-[#c1972d]">it’s an experience of a lifetime.</span>
+              <span className="text-blue-950">it’s an experience of a lifetime.</span>
             </h2>
-            <div className="mt-6 space-y-6 text-gray-600 text-lg leading-relaxed max-w-xl">
+            <div className="mt-6 space-y-6 text-blue-950 text-lg leading-relaxed max-w-xl">
               <p className="text-justify">
                 It fosters independence, self-assuredness, international immersion, and career advancement
                 that stretch beyond the classroom. There are many academic, professional, and personal
@@ -107,7 +108,7 @@ const navigate = useNavigate();
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <CheckCircle className="text-[#c1972d] shrink-0" size={20} />
-                  <span className="text-gray-900 font-semibold text-base">{benefit}</span>
+                  <span className="text-blue-950 font-semibold text-base">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -120,7 +121,7 @@ const navigate = useNavigate();
   whileHover={{ scale: 1.05 }}
   whileTap={{ scale: 0.98 }}
   onClick={() => navigate("/contact")}
-  className="bg-linear-to-r from-[#c1972d] to-blue-950 text-white px-10 py-4 rounded-full font-bold shadow-xl transition-all"
+  className="bg-linear-to-r from-[#c1972d] to-blue-950 text-white px-10 py-3 rounded-full font-bold shadow-xl transition-all"
 >
   Start Your Journey
 </motion.button>
@@ -138,7 +139,7 @@ const navigate = useNavigate();
                   </div>
                 </div>
                 <div>
-                  <p className="text-base font-bold text-gray-900 leading-none">18k+</p>
+                  <p className="text-base font-bold text-blue-950 leading-none">18k+</p>
                   <p className="text-xs text-gray-500 font-medium">Global Success Stories</p>
                 </div>
               </div>

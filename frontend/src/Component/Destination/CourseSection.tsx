@@ -43,7 +43,7 @@ const CourseSection = ({ data }: CourseSectionProps) => {
 
         {/* HEADER */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl text-blue-950  max-w-2xl mx-auto font-extrabold ">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] max-w-2xl mx-auto ">
             {data.title}
           </h2>
           <div className="w-24 h-1 bg-linear-to-r from-[#c1972d] to-blue-950 mx-auto mt-4 rounded-full" />
@@ -58,7 +58,7 @@ const CourseSection = ({ data }: CourseSectionProps) => {
               className="group perspective-[1000px] cursor-pointer h-100" 
               onClick={() => setFlippedIndex(flippedIndex === i ? null : i)}
             >
-              <div className={`relative h-full w-full transition-transform duration-700 transform-3d md:group-hover:[transform:rotateY(180deg)] ${flippedIndex === i ? "[transform:rotateY(180deg)]" : ""}`}>
+              <div className={`relative h-full w-full transition-transform duration-700 transform-3d md:group-hover:transform-[rotateY(180deg)] ${flippedIndex === i ? "transform-[rotateY(180deg)]" : ""}`}>
 
 
                 {/* FRONT */}
@@ -84,16 +84,16 @@ const CourseSection = ({ data }: CourseSectionProps) => {
                         {course.icon ? course.icon : getIcon(course.title)}
                       </div>
 
-                      <h3 className="text-xl font-bold mb-2">
+                      <h3 className="text-xl font-serif text-[#c1972d] font-bold mb-2">
                         {course.title}
                       </h3>
 
-                      <p className="text-sm opacity-90">
+                      <p className="text-sm  ">
                         {course.description}
                       </p>
                     </div>
 
-                    <p className="text-xs font-semibold mt-4 text-white/80">
+                    <p className="text-xs font-semibold mt-4 text-white">
                       Hover to explore →
                     </p>
 
@@ -102,10 +102,10 @@ const CourseSection = ({ data }: CourseSectionProps) => {
 
                 {/* BACK SIDE */}
                 <div 
-                  className="absolute inset-0 bg-linear-to-r from-[#c1972d] to-blue-950 text-white rounded-3xl p-7 md:p-8 shadow-xl [transform:rotateY(180deg)] backface-hidden overflow-y-auto overscroll-contain custom-scrollbar"
+                  className="absolute inset-0 bg-linear-to-r from-[#c1972d] to-blue-950 text-white rounded-3xl p-7 md:p-8 shadow-xl transform-[rotateY(180deg)] backface-hidden overflow-y-auto overscroll-contain custom-scrollbar"
                 >
 
-                  <h3 className="text-2xl font-bold mb-3">
+                  <h3 className="text-2xl font-serif font-bold mb-3">
                     {course.title}
                   </h3>
 

@@ -114,12 +114,12 @@ const QuietInvitationContactForm = () => {
 
         <div className="relative z-20 max-w-xl">
 
-          <p className="text-white font-bold text-xs mb-4  ">
+          <p className="text-white font-bold text-md mb-4  ">
             Contact Us
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold font-serif text-[#c1972d] mb-6">
-            It All Begins With A Conversation
+          <h2 className="text-3xl md:text-5xl font-bold font-serif text-white mb-6">
+            It All Begins With A <span className="text-[#c1972d]"> Conversation</span>
           </h2>
 
           <form onSubmit={onSubmit} className="space-y-4">
@@ -182,7 +182,7 @@ const QuietInvitationContactForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-linear-to-r from-[#c1972d] to-blue-950 text-white py-4 px-10 rounded-2xl"
+              className="bg-linear-to-r from-[#c1972d] to-blue-950 text-white py-3 px-10 rounded-2xl"
             >
               {loading ? "Sending..." : "Begin With a Conversation"}
             </button>
@@ -207,7 +207,7 @@ const QuietInvitationContactForm = () => {
 
         <div className="relative w-[90%] md:w-80 bg-white shadow-2xl z-30">
           <div className="p-6 flex justify-between items-center border-b">
-            <h3 className="text-xl font-bold">Track Offices</h3>
+            <h3 className="text-xl font-serif text-[#c1972d] font-bold">Track Offices</h3>
             <Building2 className="text-[#c1972d]" size={28} />
           </div>
 

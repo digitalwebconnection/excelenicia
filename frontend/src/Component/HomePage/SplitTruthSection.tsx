@@ -30,12 +30,12 @@ export default function SplitTruthSection() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-white">
             Honest Guidance.
             <span className="text-[#c1972d]"> No Hidden Agendas.</span>
           </h2>
 
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-slate-2  00 mt-4 max-w-2xl mx-auto">
             Our goal is simple — help students make informed decisions
             about their international education.
           </p>
@@ -53,7 +53,7 @@ export default function SplitTruthSection() {
             whileInView={{ opacity: 1, x: 0 }}
             className="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-md"
           >
-            <h3 className="text-[#c1972d] text-xl md:text-2xl font-bold mb-8">
+            <h3 className="text-[#c1972d] font-serif text-xl md:text-2xl font-bold mb-8">
               What We Do
             </h3>
 
@@ -75,7 +75,7 @@ export default function SplitTruthSection() {
             whileInView={{ opacity: 1, x: 0 }}
             className="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-md"
           >
-            <h3 className="text-red-400 text-xl md:text-2xl font-bold mb-8">
+            <h3 className="text-red-400 font-serif text-xl md:text-2xl font-bold mb-8">
               What We Don't Do
             </h3>
 

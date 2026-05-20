@@ -33,11 +33,11 @@ const navigate = useNavigate();
               Begin With Clarity
             </p>
 
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-blue-950 leading-[1.1] mb-6">
-              Before You Cross Borders, <span className="text-[#c1972d]"> You Cross Doubt.</span>
+            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]  mb-6">
+              Before You Cross Borders, <span className="text-blue-950"> You Cross Doubt.</span>
             </h2>
 
-            <p className="text-slate-600 leading-relaxed max-w-xl mb-6 text-md md:text-lg">
+            <p className="text-blue-950 leading-relaxed max-w-xl mb-6 text-md md:text-lg">
               Every student stands at the edge of uncertainty.
               Our role isn’t to push you forward — it’s to make sure you’re ready.
             </p>
@@ -64,7 +64,7 @@ const navigate = useNavigate();
                 >
                   <Check size={14} strokeWidth={3} />
                 </motion.span>
-                <span className="text-slate-700 font-medium text-lg group-hover:text-blue-950 transition-colors duration-300">
+                <span className="text-blue-950 font-medium text-lg group-hover:text-blue-950 transition-colors duration-300">
                   {step}
                 </span>
               </motion.li>
@@ -81,8 +81,8 @@ const navigate = useNavigate();
           >
             <button
              onClick={() => navigate("/contact")}
-              className="px-8 py-4 bg-linear-to-r from-[#c1972d]  to-blue-950 text-white font-bold rounded-sm  transition-all duration-300 shadow-lg hover:shadow-blue-200 hover:-translate-y-1">
-              LEARN MORE ABOUT PROCESS
+              className="px-10 py-3 bg-linear-to-r from-[#c1972d]  to-blue-950 text-white font-bold rounded-sm  transition-all duration-300 shadow-lg hover:shadow-blue-200 hover:-translate-y-1">
+              Learn More About Process
             </button>
           </motion.div>
         </div>

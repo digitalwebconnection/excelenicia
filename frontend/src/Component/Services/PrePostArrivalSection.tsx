@@ -140,16 +140,16 @@ const navigate = useNavigate();
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-3xl md:text-5xl font-black text-blue-950 leading-tight mb-4"
+            className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] leading-tight mb-4"
           >
             Your Complete
-            <span className="text-[#c1972d] block">Journey Companion</span>
+            <span className="text-blue-950 block">Journey Companion</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-xl text-slate-950 max-w-7xl mx-auto leading-relaxed px-6 md:px-0"
+            className="text-xl text-blue-950 max-w-7xl mx-auto leading-relaxed px-6 md:px-0"
           >
             From preparation to success, we provide comprehensive support at every stage of your international education journey.
           </motion.p>
@@ -281,7 +281,7 @@ const navigate = useNavigate();
                         >
                           <CheckCircle size={24} className="text-[#c1972d] mt-0.5 shrink-0" />
                         </motion.div>
-                        <span className="text-slate-700 font-medium leading-relaxed">{service}</span>
+                        <span className="text-blue-950 font-medium leading-relaxed">{service}</span>
                       </motion.div>
                     ))}
                   </div>

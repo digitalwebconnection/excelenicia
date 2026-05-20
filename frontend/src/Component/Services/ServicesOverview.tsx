@@ -1,4 +1,4 @@
- 
+
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -104,8 +104,8 @@ export default function Roadmap() {
             <div className="roadmap-container-main ">
 
                 <div className="roadmap-header">
-                    <h2>Our <span className="text-[#c1972d]">Services</span></h2>
-                    <p>Follow the path to your global career</p>
+                    <h3 className="text-3xl md:text-5xl font-serif font-extrabold text-center text-[#c1972d]">Our <span className="text-blue-950">Services</span></h3>
+                    <span className="text-blue-950 text-lg">Follow the path to your global career</span>
                 </div>
 
                 <div className="roadmap-visual-area">

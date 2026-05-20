@@ -113,7 +113,7 @@ export default function ExcelenciFormWhite() {
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="lg:col-span-5 lg:sticky lg:top-24 space-y-6 pt-2"
+                    className="lg:col-span-5 lg:sticky lg:top-10 space-y-6 pt-2"
                 >
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-[#c1972d]/10 flex items-center justify-center text-[#c1972d]">
@@ -124,15 +124,15 @@ export default function ExcelenciFormWhite() {
                         </p>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl font-serif font-extrabold leading-tight tracking-tight text-blue-950">
-                        Your Blueprint for <span className="text-[#c1972d]"> Global Success</span>
+                    <h2 className="text-3xl md:text-5xl font-serif font-extrabold leading-tight tracking-tight text-[#c1972d]">
+                        Your Blueprint for <span className="text-blue-950"> Global Success</span>
                     </h2>
 
-                    <p className="text-slate-600 text-md md:text-lg leading-relaxed max-w-md">
+                    <p className="text-blue-950 text-md md:text-lg  leading-relaxed max-w-md">
                         Expert consultation tailored for study, work, and permanent residency visas.
                     </p>
 
-                    <div className="border-t border-slate-100 md:pt-6 mt-8 space-y-4 text-sm text-slate-600">
+                    <div className="border-t border-slate-100 md:pt-6 mt-8 space-y-4 text-sm text-blue-950 ">
                         <p className="flex items-center gap-2">
                             <Target className="text-[#c1972d]" size={16} />
                             100% Case Assessment
@@ -156,10 +156,10 @@ export default function ExcelenciFormWhite() {
                     <input type="hidden" name="subject" value="New Consultation Request" /> 
 
                     <motion.div variants={itemVariants} className="mb-5">
-                        <h3 className="text-3xl md:text-4xl font-bold font-serif text-[#c1972d] mb-2">
+                        <h3 className="text-3xl md:text-5xl font-bold font-serif text-[#c1972d] mb-2">
                             Request a Consultation
                         </h3>
-                        <p className="text-slate-600">
+                        <p className="text-blue-950  text-lg">
                             Provide your details, and our visa experts will connect shortly.
                         </p>
                     </motion.div>
@@ -218,14 +218,14 @@ export default function ExcelenciFormWhite() {
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                className="flex items-center gap-2 text-[#c1972d] font-bold tracking-widest   text-xs mb-3" >
+                                className="flex items-center gap-2 text-[#c1972d] font-bold tracking-widest   text-md mb-3" >
                                 <span className="w-8 h-0.5 bg-[#c1972d]"></span> Knowledge Hub
                             </motion.div>
-                            <h2 className="text-3xl md:text-5xl font-black font-serif text-blue-950 leading-tight">
-                                Latest <span className="text-[#c1972d]">Insights &</span> Updates
+                            <h2 className="text-3xl md:text-5xl font-black font-serif text-[#c1972d] leading-tight">
+                                Latest <span className="text-blue-950">Insights &  Updates</span>
                             </h2>
                         </div>
-                        <button className="hidden bg-linear-to-r from-[#c1972d] to-blue-950 md:flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 text-white font-semibold transition-colors">
+                        <button className="hidden bg-linear-to-r from-[#c1972d] to-blue-950 md:flex items-center gap-2 px-10 py-3 rounded-full border border-slate-200 text-white font-semibold transition-colors">
                             View All News <ArrowUpRight size={18} />
                         </button>
                     </div>
@@ -264,14 +264,14 @@ function FeaturedCard({ item }: { item: any }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 group relative bg-slate-900 rounded-[2.5rem] p-4 md:p-10 overflow-hidden flex flex-col justify-end md:min-h-112 min-h-90 "
+            className="lg:col-span-6 group relative bg-slate-900 rounded-lg p-4 md:p-10 overflow-hidden flex flex-col justify-end md:min-h-112 min-h-90 "
         >
             <div className="relative z-10">
                 <span className="bg-[#c1972d] text-white text-[10px] px-4 py-1 rounded-full">{item.category}</span>
                 <h3 className= "text-2xl md:text-3xl font-bold text-white mt-2 md:mt-6 mb-4">{item.title}</h3>
-                <p className="text-slate-400 text-md md:text-lg mb-8 max-w-md">{item.desc}</p>
+                <p className="text-slate-100 text-md md:text-lg mb-8 max-w-md">{item.desc}</p>
                 <div className="flex justify-between border-t border-white/10 pt-6">
-                    <span className="text-slate-500 text-sm">{item.date}</span>
+                    <span className="text-slate-200 text-sm">{item.date}</span>
                     <button className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
                         <ArrowUpRight size={22} />
                     </button>
@@ -287,13 +287,13 @@ function SecondaryCard({ item, index }: { item: any; index: number }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="group bg-slate-100 border border-[#c1972d] p-4 md:p-8 rounded-4xl hover:shadow-xl transition"
+            className="group bg-slate-100 border border-[#c1972d] p-4 md:p-8 rounded-lg hover:shadow-xl transition"
         >
             <div className="text-[#c1972d] mb-6 p-3 bg-white w-fit rounded-2xl shadow-sm">{item.icon}</div>
             <h3 className="text-lg md:text-xl font-bold text-[#c1972d] leading-snug">{item.title}</h3>
-            <p className="text-slate-500 text-sm mt-4 text-justify">{item.desc}</p>
+            <p className="text-blue-950 text-sm mt-4 text-justify">{item.desc}</p>
             <div className="mt-6 flex justify-between text-xs  ">
-                <span className="text-slate-400">{item.date}</span>
+                <span className="text-blue-950">{item.date}</span>
                 <span className="flex items-center gap-1">Read <ArrowUpRight size={14} /></span>
             </div>
         </motion.div>

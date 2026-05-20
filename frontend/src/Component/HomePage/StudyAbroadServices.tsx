@@ -44,16 +44,16 @@ const navigate = useNavigate();
             <span className="inline-block px-4 py-1 rounded-full bg-[#c1972d]/10 text-[#c1972d] text-sm font-bold   tracking-widest mb-4">
               Our Services
             </span>
-            <h2 className="text-blue-950 font-serif text-3xl md:text-5xl font-black leading-tight mb-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-6">
               End-to-End Study  <br /> 
-              <span className="text-[#c1972d] text-3xl md:text-5xl">Abroad Support.</span>
+              <span className="text-blue-950 text-3xl md:text-5xl">Abroad Support.</span>
             </h2>
-            <p className="text-slate-600 text-md md:text-lg mb-8 leading-relaxed">
+            <p className="text-blue-950 text-md md:text-lg mb-8 leading-relaxed">
            We make the entire process simple, clear, and stress-free.
             </p>
             <button
-             onClick={() => navigate("/contact")}
-            className="group flex items-center gap-3 bg-linear-to-r from-[#c1972d] to-blue-950 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl shadow-blue-950/20">
+             onClick={() => navigate("/Services")}
+            className="group flex items-center gap-3 bg-linear-to-r from-[#c1972d] to-blue-950 text-white px-10 py-3 rounded-lg font-bold transition-all duration-300 shadow-xl shadow-blue-950/20">
               Get Started Now
               <Plane className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" size={20} />
             </button>

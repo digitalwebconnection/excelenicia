@@ -64,11 +64,11 @@ const navigate = useNavigate();
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[#c1972d] font-semibold mb-3 uppercase text-sm tracking-widest">
+          <p className="text-[#c1972d] font-semibold mb-3 uppercase text-lg tracking-widest">
             {data.subtitle}
           </p>
 
-          <h1 className="text-4xl md:text-6xl max-w-xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl max-w-xl font-serif font-bold leading-tight mb-6">
             {data.title}
           </h1>
 
@@ -111,16 +111,7 @@ const navigate = useNavigate();
           className="relative"
         >
           
-          {/* FLOATING CARD */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl text-black"
-          >
-            <p className="text-sm text-gray-500">Visa Success Rate</p>
-            <h3 className="text-2xl font-bold text-[#c1972d]">95%</h3>
-          </motion.div> */}
+        
         </motion.div>
       </div>
     </section>

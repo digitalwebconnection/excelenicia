@@ -89,11 +89,11 @@ export default function AutoRotatingStudentVoices() {
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.p className="  tracking-widest text-[#c1972d] font-bold text-xs mb-3">
+          <motion.p className="  tracking-widest text-blue-950 font-bold text-md mb-3">
             Student Voices
           </motion.p>
-          <motion.h2 className="text-3xl md:text-4xl font-bold text-blue-950">
-            Real stories. <span className=" text-[#c1972d]">Real trust.</span>
+          <motion.h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] ">
+            Real stories. <span className=" text-blue-950">Real trust.</span>
           </motion.h2>
         </div>
 
@@ -176,15 +176,15 @@ export default function AutoRotatingStudentVoices() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="text-6xl text-blue-100 font-serif leading-none block h-8">“</span>
-                <h3 className="text-md text-justify md:text-2xl font-medium text-slate-800 italic leading-tight">
+                <span className="text-6xl text-blue-950 font-serif leading-none block h-8">“</span>
+                <h3 className="text-md text-justify md:text-2xl font-medium text-blue-950 italic leading-tight">
                   {students[currentIndex % students.length].quote}
                 </h3>
                 <div className="mt-4">
-                  <p className="text-lg  font-bold text-slate-900">
+                  <p className="text-lg  font-bold text-[#c1972d]">
                     — {students[currentIndex % students.length].name}
                   </p>
-                  <p className="text-slate-500 text-sm tracking-wide  ">
+                  <p className="text-slate-800 text-sm tracking-wide  ">
                     Studying in {students[currentIndex % students.length].location}
                   </p>
                 </div>

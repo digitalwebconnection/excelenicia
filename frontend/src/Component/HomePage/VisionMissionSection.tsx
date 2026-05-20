@@ -18,7 +18,7 @@ export default function VisionMissionSection() {
         >
           <div className="max-w-xl">
 
-            <span className="text-sm tracking-[0.35em]   font-bold text-[#c1972d] drop-shadow-sm">
+            <span className="text-md tracking-[0.15em]   font-bold text-[#c1972d] drop-shadow-sm">
               Excelencia International
             </span>
 
@@ -32,13 +32,13 @@ export default function VisionMissionSection() {
                 <Globe size={34} className="text-blue-700 drop-shadow-lg" />
               </motion.div>
 
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-950 drop-shadow-md">
+              <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-blue-950 drop-shadow-md">
                 Our Vision
               </h2>
 
             </div>
 
-            <p className="text-md md:text-lg text-justify leading-relaxed text-slate-700 drop-shadow-sm">
+            <p className="text-md md:text-lg text-justify leading-relaxed text-blue-950 drop-shadow-sm">
               At <a href="/">Excelencia International</a>, our vision is to be a globally recognized leader in international education and immigration services.
               We strive to simplify the complexities of studying abroad so that students can embark on their academic journeys with clarity and confidence.
               We envision a future where every student, regardless of background, has access to quality guidance, seamless processes, and the support they need
@@ -170,11 +170,11 @@ export function CoreValuesSection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-5xl font-serif font-bold text-slate-900"
+            className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]"
           >
-            Our <span className="text-[#c1972d]">Core Values</span>
+            Our <span className="text-blue-950">Core Values</span>
           </motion.h2>
-          <p className="mt-6 max-w-5xl text-md md:text-lg mx-auto text-slate-700">
+          <p className="mt-6 max-w-5xl text-md md:text-lg mx-auto text-blue-950">
             At the heart of <b>Excelencia International</b> lie four core values that define how we serve our clients and operate as an organization.
           </p>
         </div>
@@ -208,10 +208,10 @@ export function CoreValuesSection() {
                   {/* Content */}
                   <div className={`max-w-5xl ${isLeft ? "text-left" : "text-left md:ml-auto ps-6"}`}>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 font-serif ">
+                    <h3 className="text-2xl md:text-3xl font-bold text-blue-950 mb-2 font-serif ">
                       {value.title}
                     </h3>
-                    <p className="text-slate-600 text-md md:text-lg leading-relaxed">
+                    <p className="text-blue-950 text-md md:text-lg leading-relaxed">
                       {value.desc}
                     </p>
                   </div>

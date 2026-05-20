@@ -71,7 +71,7 @@ export default function ExcelenciaExperience() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="px-4 py-1 rounded-full bg-blue-50 text-blue-950 text-xs font-bold tracking-widest   mb-4 border border-blue-100"
+            className="px-4 py-1 rounded-full bg-blue-50 text-blue-950 text-md font-bold tracking-widest   mb-4 border border-blue-100"
           >
             Did You Know
           </motion.div>
@@ -79,10 +79,10 @@ export default function ExcelenciaExperience() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-6xl font-black text-[#1a2b3b] text-center  tracking-tighter"
+            className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]"
           >
-            The <span className="text-[#c1972d] relative">
-              Excelencia
+            The  Excelencia <span className="text-blue-950 relative">
+               Experience
               <motion.svg 
                 viewBox="0 0 100 10" 
                 className="absolute -bottom-2 left-0 w-full h-2 text-blue-950/10"
@@ -91,7 +91,7 @@ export default function ExcelenciaExperience() {
               >
                 <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" />
               </motion.svg>
-            </span> Experience
+            </span>
           </motion.h2>
         </div>
 
@@ -137,7 +137,7 @@ function StatCard({ item, index }: { item: typeof stats[0], index: number }) {
       <div className="relative mb-4 flex justify-center items-center h-20">
         <h3 className="text-6xl font-black tracking-tighter transition-all duration-500 group-hover:scale-110">
           <span className="
-            text-blue-950 group-hover:text-white
+            text-[#c1972d] group-hover:text-white
             [text-stroke:1px_transparent] 
             group-hover:[text-stroke:1px_rgba(255,255,255,0.3)]
             transition-all duration-500
@@ -149,10 +149,10 @@ function StatCard({ item, index }: { item: typeof stats[0], index: number }) {
 
       {/* Text Content */}
       <div className="relative z-10">
-        <h4 className="text-md font-bold text-[#1a2b3b] group-hover:text-[#ffffff] mb-3   tracking-wider transition-colors duration-500">
+        <h4 className="text-md font-bold text-blue-950 group-hover:text-[#ffffff] mb-3   tracking-wider transition-colors duration-500">
           {item.title}
         </h4>
-        <p className="text-gray-500 text-justify text-sm leading-relaxed max-w-80 mx-auto group-hover:text-white transition-colors duration-500">
+        <p className="text-blue-950 text-justify text-sm leading-relaxed max-w-80 mx-auto group-hover:text-white transition-colors duration-500">
           {item.desc}
         </p>
       </div>

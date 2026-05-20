@@ -12,9 +12,10 @@ import ServicesMain from "./Component/Services/ServicesMain";
 import ScrollToTop from "./Component/ScrollToTop";
 import DestinationPage from "./Component/Destination/DestinationPage";
 import AdminApp from "./admin/AdminApp";
-import LandingPage from "./Component/sections/HomePage";
 import CookieConsent from "./Component/CookieConsent";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
+import BlogPage from "./Component/Updates/BlogPage";
+import BlogPostPage from "./Component/Updates/BlogPostPage";
 
 function App() {
   useEffect(() => {
@@ -45,9 +46,6 @@ function App() {
       <Routes>
         <Route path="/admin/*" element={<AdminApp />} />
 
-        {/* Webinar / Landing page — standalone, its own Header/Footer */}
-        <Route path="/webinar" element={<LandingPage />} />
-
         {/* Public routes */}
         <Route path="/*" element={
           <>
@@ -60,6 +58,8 @@ function App() {
                 <Route path="/Services" element={<ServicesMain />} />
                 <Route path="/destination/:country" element={<DestinationPage />} />
                 <Route path="/contact" element={<ContactUsMain />} />
+                <Route path="/updates/blog" element={<BlogPage />} />
+                <Route path="/updates/blog/:id" element={<BlogPostPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               </Routes>
             </main>

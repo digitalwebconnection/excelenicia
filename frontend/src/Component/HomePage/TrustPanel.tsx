@@ -38,20 +38,20 @@ export default function ParentsPeaceOfMind() {
 
         {/* RIGHT — CONTENT */}
         <div>
-          <p className="text-sm   tracking-widest text-blue-950 font-semibold mb-4">
+          <p className="text-md   tracking-widest text-blue-950 font-semibold mb-4">
             For Parents, With Care
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-[#c1972d] mb-6 leading-tight">
-            Because trust matters as much as dreams.
+          <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d]">
+            Because trust matters as <span className=" text-blue-950"> much as dreams.</span>
           </h2>
 
-          <p className="text-gray-600 mb-6">
+          <p className="text-blue-950 mb-6">
             This journey isn’t taken alone.  
             It’s shared by families who care deeply about safety, clarity, and the future.
           </p>
 
-          <p className="font-medium text-gray-800 mb-6">
+          <p className="font-medium text-blue-950 mb-6">
             We guide students forward —  
             and keep parents confidently informed at every step.
           </p>
@@ -65,7 +65,7 @@ export default function ParentsPeaceOfMind() {
           </ul>
    <Link
           to="/contact"
-          className="rounded-full bg-linear-to-r from-[#c1972d]  to-blue-950 px-8 py-3 text-white font-semibold  transition"
+          className="rounded-lg bg-linear-to-r from-[#c1972d]  to-blue-950 px-10 py-3 text-white font-semibold  transition"
         >
           Talk to Our Counsellor →
         </Link>
@@ -77,7 +77,7 @@ export default function ParentsPeaceOfMind() {
 
 function TrustPoint({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <li className="flex items-center gap-3 text-gray-700">
+    <li className="flex items-center gap-3 text-blue-950">
       <span className="text-green-600">{icon}</span>
       {text}
     </li>

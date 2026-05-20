@@ -35,15 +35,15 @@ const EducationSection = ({ data }: SectionProps) => {
 
       {/* HEADER */}
       <div className="max-w-7xl mx-auto text-center mb-20 px-6">
-        <p className="text-[#c1972d] font-semibold uppercase text-sm mb-1 tracking-widest">
+        <p className="text-[#c1972d] font-semibold uppercase text-md mb-1 tracking-widest">
           Education System
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mx-auto text-blue-950 mb-4">
+        <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] max-w-2xl mx-auto mb-4">
           {data.title}
         </h2>
 
-        <p className="text-gray-600  text-lg max-w-6xl mx-auto">
+        <p className="text-blue-950 text-lg max-w-6xl mx-auto">
           {data.intro}
         </p>
       </div>
@@ -87,14 +87,14 @@ const EducationSection = ({ data }: SectionProps) => {
                 <div>
                   <h3
                     className={`font-semibold text-lg ${activeIndex === i
-                      ? "text-gray-900"
-                      : "text-gray-500 group-hover:text-gray-800"
+                      ? "text-blue-950"
+                      : "text-blue-950 group-hover:text-blue-950"
                       }`}
                   >
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-blue-950">
                     {item.content.slice(0, 60)}...
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const EducationSection = ({ data }: SectionProps) => {
             </h3>
 
             <div
-              className="edu-content text-gray-600 text-justify text-lg leading-relaxed mb-8"
+              className="edu-content text-blue-950 text-justify text-lg leading-relaxed mb-8"
               dangerouslySetInnerHTML={{ __html: data.sections[activeIndex]?.content }}
             />
 

@@ -77,15 +77,15 @@ function LeaderCard({ person, index }: any) {
                     </div>
 
                     <div className="px-5 py-5 text-[#1a2b3b]">
-                        <h3 className="text-xl md:text-2xl font-black mb-1">
+                        <h3 className="text-xl md:text-2xl font-black mb-1 text-[#c1972d] font-serif">
                             {person.name}
                         </h3>
 
-                        <p className="text-xs md:text-sm font-bold   tracking-widest mb-3">
+                        <p className="text-xs md:text-sm font-bold text-blue-950   tracking-widest mb-3">
                             {person.role}
                         </p>
 
-                        <p className="text-xs md:text-sm text-gray-600">
+                        <p className="text-xs md:text-sm text-blue-950">
                             {person.description}
                         </p>
                     </div>
@@ -94,11 +94,11 @@ function LeaderCard({ person, index }: any) {
                 {/* BACK */}
                 <div className="absolute inset-0 bg-white text-blue-950 rounded-[2.5rem] p-6 overflow-y-auto rotate-y-180 backface-hidden">
                     
-                    <h3 className="text-2xl font-black mb-1">
+                    <h3 className="text-2xl text-[#c1972d] font-serif font-black mb-1">
                         {person.name}
                     </h3>
 
-                    <p className="text-sm text-[#c1972d] font-bold mb-4">
+                    <p className="text-sm text-blue-950 font-bold mb-4">
                         {person.role}
                     </p>
 
@@ -107,7 +107,7 @@ function LeaderCard({ person, index }: any) {
                         {person.quotes.map((q: string, i: number) => (
                             <div
                                 key={i}
-                                className="italic text-md border-l-4 border-[#c1972d] pl-3"
+                                className=" text-md border-l-4 border-[#c1972d] pl-3"
                             >
                                 "{q}"
                             </div>
@@ -157,19 +157,19 @@ export default function PeopleBehindExcelencia() {
                 <div className="text-center mb-6">
 
                     <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-6">
-                        <span className="text-[10px] font-black   tracking-[0.3em] text-blue-900">
+                        <span className="text-md font-black   tracking-[0.3em] text-blue-900">
                             Our Architects
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-7xl font-black text-blue-950 tracking-tighter mb-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-6">
                         The People <br className="hidden md:block" />
-                        <span className="text-[#c1972d] i">
+                        <span className="text-blue-950">
                             Behind Excelencia
                         </span>
                     </h2>
 
-                    <p className="max-w-7xl mx-auto text-md md:text-lg font-medium leading-relaxed">
+                    <p className="max-w-7xl mx-auto text-md md:text-lg text-blue-950 font-medium leading-relaxed">
                         Bridging the gap between local ambition and global opportunity through structured leadership and empathetic guidance.
                     </p>
 
