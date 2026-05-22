@@ -132,9 +132,9 @@ const BlogPostPage = () => {
         >
           <Link
             to="/updates/blog"
-            className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors text-sm font-medium group"
+            className="inline-flex items-center text-white hover:text-white border border-white bg-blue-900/80 px-2 py-1 rounded-full mb-10 transition-colors text-sm font-medium group hover:border border-white hover:px-2 hover:rounded-full hover:py-1 hover:bg-blue-950"
           >
-            <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform duration-300" size={16} />
+            <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform duration-300 " size={16} />
             Back to all articles
           </Link>
 
@@ -144,8 +144,8 @@ const BlogPostPage = () => {
                 {blog.categories}
               </span>
             )}
-            {blog.date && <span className="text-gray-300 text-sm">{blog.date}</span>}
-            {blog.readTime && <span className="text-gray-400 text-sm">· {blog.readTime}</span>}
+            {blog.date && <span className="text-white text-sm">{blog.date}</span>}
+            {blog.readTime && <span className="text-white text-sm">· {blog.readTime}</span>}
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-bold leading-tight">
@@ -172,7 +172,7 @@ const BlogPostPage = () => {
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
-        {blog.meta?.longContent && (
+          {blog.meta?.longContent && (
           <div
             className="hidden"
             dangerouslySetInnerHTML={{ __html: blog.meta.longContent }}

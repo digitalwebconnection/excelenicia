@@ -128,6 +128,7 @@ const BlogPage = () => {
               show: { transition: { staggerChildren: 0.15 } },
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            
           >
             {blogs.map(blog => (
               <motion.div
@@ -136,8 +137,9 @@ const BlogPage = () => {
                   hidden: { opacity: 0, y: 30 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
                 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col h-full hover:-translate-y-2"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col h-full hover:-translate-y-2 relative"
               >
+                <Link to={`/updates/blog/${blog.slug || blog._id}`} className="absolute inset-0 z-10" aria-label={`Read ${blog.title}`} />
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden bg-gray-100">
                   {blog.image ? (
@@ -155,7 +157,7 @@ const BlogPage = () => {
                     </div>
                   )}
                   {blog.categories && (
-                    <div className="absolute top-4 left-4 bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                    <div className="absolute top-4 left-4 bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-20">
                       {blog.categories}
                     </div>
                   )}
@@ -163,30 +165,27 @@ const BlogPage = () => {
 
                 {/* Body */}
                 <div className="p-6 flex flex-col grow">
-                  <div className="flex items-center gap-3 text-gray-500 text-sm mb-3">
+                  <div className="flex items-center gap-3 text-black text-sm mb-3">
                     {blog.date && <span>{blog.date}</span>}
                     {blog.readTime && (
                       <>
-                        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                        <span className="w-1 h-1 bg-black rounded-full" />
                         <span>{blog.readTime}</span>
                       </>
                     )}
                   </div>
 
-                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#c1972d] transition-colors">
+                  <h3 className="text-2xl font-serif font-bold text-blue-950 mb-3 line-clamp-2 group-hover:text-[#c1972d] transition-colors">
                     {blog.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 line-clamp-3 grow">
+                  <p className="text-blue-950 mb-6 line-clamp-3 grow">
                     {blog.excerpt}
                   </p>
 
-                  <Link
-                    to={`/updates/blog/${blog.slug || blog._id}`}
-                    className="inline-flex items-center text-[#c1972d] font-semibold hover:text-black transition-colors"
-                  >
+                  <div className="inline-flex items-center text-[#c1972d] font-semibold group-hover:text-black transition-colors mt-auto relative z-20">
                     Read Full Article
                     <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                  </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
