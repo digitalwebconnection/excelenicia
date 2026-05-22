@@ -38,24 +38,21 @@ const FullPageLoader = () => {
                                 const opacity = Math.max(0.1, 1 - i * 0.05);
 
                                 return (
-                                    <>
+                                    <div
+                                        key={i}
+                                        className="absolute inset-0"
+                                        style={{ transform: `rotate(-${rotation}deg)` }}
+                                    >
                                         <div
-                                            key={i}
-                                            className="absolute inset-0"
-                                            style={{ transform: `rotate(-${rotation}deg)` }}
-                                        >
-                                            <div
-                                                className="absolute -ms-8 top-0 left-1/2 -translate-x-1/2 rounded-full bg-white"
-                                                style={{
-                                                    width: i === 0 ? '12px' : '10px', // Lead dot is slightly larger
-                                                    height: i === 0 ? '12px' : '10px',
-                                                    transform: `scale(${scale})`,
-                                                    opacity: opacity
-                                                }}
-                                            />
-                                        </div>
-
-                                    </>
+                                            className="absolute -ms-8 top-0 left-1/2 -translate-x-1/2 rounded-full bg-white"
+                                            style={{
+                                                width: i === 0 ? '12px' : '10px', // Lead dot is slightly larger
+                                                height: i === 0 ? '12px' : '10px',
+                                                transform: `scale(${scale})`,
+                                                opacity: opacity
+                                            }}
+                                        />
+                                    </div>
                                 );
                             })}
 

@@ -33,6 +33,7 @@ app.use(cors({
 // We only parse JSON for the auth route.
 app.use('/api/auth', express.json(), require('./src/routes/auth'));
 app.use('/api/countries', require('./src/routes/countries'));
+app.use('/api/blogs', require('./src/routes/blogs'));
 
 // ─── Health check ─────────────────────────────────────────
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));

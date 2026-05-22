@@ -35,7 +35,7 @@ const EducationSection = ({ data }: SectionProps) => {
 
       {/* HEADER */}
       <div className="max-w-7xl mx-auto text-center mb-20 px-6">
-        <p className="text-[#c1972d] font-semibold uppercase text-md mb-1 tracking-widest">
+        <p className="text-blue-950 font-semibold uppercase text-md mb-1 tracking-widest">
           Education System
         </p>
 
