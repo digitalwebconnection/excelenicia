@@ -162,7 +162,7 @@ const BlogPostPage = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 py-16"
       >
         {blog.excerpt && (
-          <p className="text-xl text-gray-600 italic mb-10 border-l-4 border-[#c1972d] pl-6">
+          <p className="text-xl text-gray-600 italic mb-10">
             {blog.excerpt}
           </p>
         )}
@@ -200,7 +200,7 @@ const BlogPostPage = () => {
         .blog-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; }
         .blog-content a { color: #c1972d; text-decoration: underline; }
         .blog-content a:hover { color: #1e293b; }
-        .blog-content blockquote { border-left: 4px solid #c1972d; padding-left: 1.5rem; font-style: italic; margin: 1.5rem 0; color: #475569; }
+        .blog-content blockquote { border-left: 4px solid #cbd5e1; padding-left: 1.5rem; font-style: italic; margin: 1.5rem 0; color: #475569; }
         .blog-content pre { background: #f1f5f9; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; font-size: 0.9rem; }
         .blog-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; display: block; overflow-x: auto; }
         .blog-content table td, .blog-content table th { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
