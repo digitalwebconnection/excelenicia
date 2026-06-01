@@ -63,7 +63,7 @@ const BlogPostPage = () => {
     return (
       <div className="w-full min-h-screen bg-white">
         {/* Skeleton hero */}
-        <div className="w-full h-[50vh] bg-gray-200 animate-pulse" />
+        <div className="w-full h-[60vh] md:h-[75vh] bg-gray-200 animate-pulse" />
         <div className="max-w-3xl mx-auto px-4 py-16 space-y-4">
           <div className="h-5 w-1/4 bg-gray-200 rounded animate-pulse" />
           <div className="h-8 w-full bg-gray-200 rounded animate-pulse" />
@@ -76,7 +76,7 @@ const BlogPostPage = () => {
     );
   }
 
-  /* ── Error / Not Found state ── */
+  /* Error / Not Found state */
   if (error || !blog) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
@@ -108,7 +108,7 @@ const BlogPostPage = () => {
       </Helmet>
 
       {/* ── Article Hero ── */}
-      <section className="relative w-full h-[50vh] md:h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-[75vh] flex items-end pb-16 overflow-hidden">
         {blog.image ? (
           <>
             <motion.div
