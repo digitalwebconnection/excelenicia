@@ -48,6 +48,41 @@ export default function RichTextEditor({ value, onChange, placeholder, label }: 
     }
   }, [value, editor]);
 
+  // Intercept paste to format 'name: message' patterns (bolding only the label before the colon)
+  useEffect(() => {
+    if (!editor) return;
+
+    const handlePasteEvent = (event: ClipboardEvent) => {
+      const text = event.clipboardData?.getData('text/plain');
+      if (!text || !text.includes(':')) return;
+
+      const lines = text.split('\n');
+      let hasPattern = false;
+      const htmlParts = lines.map(line => {
+        const match = line.match(/^([^:]{1,30}):(.*)$/);
+        if (match) {
+          hasPattern = true;
+          return `<strong>${match[1]}:</strong>${match[2]}`;
+        }
+        // HTML escape non-matching text to prevent layout breaks
+        return line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      });
+
+      if (hasPattern) {
+        event.preventDefault();
+        event.stopPropagation();
+        const htmlContent = htmlParts.map(p => `<p>${p}</p>`).join('');
+        editor.commands.insertContent(htmlContent);
+      }
+    };
+
+    const element = editor.options.element;
+    element.addEventListener('paste', handlePasteEvent, true);
+    return () => {
+      element.removeEventListener('paste', handlePasteEvent, true);
+    };
+  }, [editor]);
+
   const applyLink = useCallback(() => {
     if (!editor) return;
     if (!linkUrl.trim()) {
@@ -87,10 +122,13 @@ export default function RichTextEditor({ value, onChange, placeholder, label }: 
         .rte-editor ul { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0; }
         .rte-editor ol { list-style: decimal; padding-left: 1.25rem; margin: 0.5rem 0; }
         .rte-editor li { margin-bottom: 0.25rem; }
-        .rte-editor h1, .rte-editor h2, .rte-editor h3 { font-weight: 600; color: #fff; margin: 0.75rem 0 0.25rem; }
-        .rte-editor h1 { font-size: 1.25rem; }
-        .rte-editor h2 { font-size: 1.1rem; }
-        .rte-editor h3 { font-size: 1rem; }
+        .rte-editor h1, .rte-editor h2, .rte-editor h3, .rte-editor h4, .rte-editor h5, .rte-editor h6 { font-weight: 600; color: #fff; margin: 0.75rem 0 0.25rem; }
+        .rte-editor h1 { font-size: 1.5rem; }
+        .rte-editor h2 { font-size: 1.35rem; }
+        .rte-editor h3 { font-size: 1.2rem; }
+        .rte-editor h4 { font-size: 1.1rem; }
+        .rte-editor h5 { font-size: 1rem; }
+        .rte-editor h6 { font-size: 0.9rem; color: #94a3b8; }
         .rte-editor blockquote { border-left: 3px solid #f59e0b; padding-left: 1rem; color: #94a3b8; margin: 0.5rem 0; }
         .rte-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #64748b; pointer-events: none; }
         .rte-editor p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #64748b; float: left; height: 0; pointer-events: none; }
@@ -110,6 +148,21 @@ export default function RichTextEditor({ value, onChange, placeholder, label }: 
 
         <button type="button" title="Underline" onClick={() => editor.chain().focus().toggleUnderline().run()}
           className={btn(editor.isActive('underline'), 'underline')}>U</button>
+
+        <span className="w-px h-4 bg-slate-700 mx-1" />
+
+        {/* H1 to H6 Header Buttons */}
+        {[1, 2, 3, 4, 5, 6].map((level) => (
+          <button
+            key={level}
+            type="button"
+            title={`Heading ${level}`}
+            onClick={() => editor.chain().focus().toggleHeading({ level: level as any }).run()}
+            className={btn(editor.isActive('heading', { level }), 'font-semibold')}
+          >
+            H{level}
+          </button>
+        ))}
 
         <span className="w-px h-4 bg-slate-700 mx-1" />
 
