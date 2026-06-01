@@ -76,7 +76,7 @@ export default function RichTextEditor({ value, onChange, placeholder, label }: 
       }
     };
 
-    const element = editor.options.element;
+    const element = editor.view.dom;
     element.addEventListener('paste', handlePasteEvent, true);
     return () => {
       element.removeEventListener('paste', handlePasteEvent, true);
