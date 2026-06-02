@@ -128,7 +128,7 @@ const BlogPage = () => {
               show: { transition: { staggerChildren: 0.15 } },
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            
+
           >
             {blogs.map(blog => (
               <motion.div
@@ -137,7 +137,7 @@ const BlogPage = () => {
                   hidden: { opacity: 0, y: 30 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
                 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col h-full hover:-translate-y-2 relative"
+                className="bg-white rounded-xl overflow-hidden shadow-xl shadow-black/70 hover:shadow-2xl transition-all duration-500 group flex flex-col h-full hover:-translate-y-2 relative"
               >
                 <Link to={`/updates/blog/${blog.slug || blog._id}`} className="absolute inset-0 z-10" aria-label={`Read ${blog.title}`} />
                 {/* Image */}
@@ -146,7 +146,7 @@ const BlogPage = () => {
                     <img
                       src={blog.image}
                       alt={blog.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-300">
@@ -157,14 +157,14 @@ const BlogPage = () => {
                     </div>
                   )}
                   {blog.categories && (
-                    <div className="absolute top-4 left-4 bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-20">
+                    <div className="absolute bottom-4 left-4 bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-20">
                       {blog.categories}
                     </div>
                   )}
                 </div>
 
                 {/* Body */}
-                <div className="p-6 flex flex-col grow">
+                <div className="p-4 flex flex-col grow">
                   <div className="flex items-center gap-3 text-black text-sm mb-3">
                     {blog.date && <span>{blog.date}</span>}
                     {blog.readTime && (
@@ -178,7 +178,7 @@ const BlogPage = () => {
                   <h3 className="text-2xl font-serif font-bold text-blue-950 mb-3 line-clamp-2 group-hover:text-[#c1972d] transition-colors">
                     {blog.title}
                   </h3>
-                  <p className="text-blue-950 mb-6 line-clamp-3 grow">
+                  <p className="text-blue-950 mb-6 line-clamp-3 text-justify grow">
                     {blog.excerpt}
                   </p>
 
