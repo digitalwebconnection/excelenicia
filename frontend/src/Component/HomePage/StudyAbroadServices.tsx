@@ -52,7 +52,7 @@ const navigate = useNavigate();
            We make the entire process simple, clear, and stress-free.
             </p>
             <button
-             onClick={() => navigate("/Services")}
+             onClick={() => navigate("/services")}
             className="group flex items-center gap-3 bg-linear-to-r from-[#c1972d] to-blue-950 text-white px-10 py-3 rounded-lg font-bold transition-all duration-300 shadow-xl shadow-blue-950/20">
               Get Started Now
               <Plane className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" size={20} />

@@ -99,7 +99,7 @@ const DestinationPage = () => {
         <title>{pageData.meta?.title || pageData.name || "Destination"}</title>
         {pageData.meta?.description && <meta name="description" content={pageData.meta.description} />}
         {pageData.meta?.keywords && <meta name="keywords" content={pageData.meta.keywords} />}
-        {pageData.meta?.canonical && <link rel="canonical" href={pageData.meta.canonical} />}
+        <link rel="canonical" href={pageData.meta?.canonical || `https://excelenciaint.com/destination/${(country || "").toLowerCase().replace(/-/g, "")}`} />
         {pageData.meta?.schema && (
           <script
             type="application/ld+json"

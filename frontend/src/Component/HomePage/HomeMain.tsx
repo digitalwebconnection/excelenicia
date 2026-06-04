@@ -22,6 +22,7 @@ const HomeMain = () => {
       <Helmet>
         <title>Top Student Visa Consultants in Mumbai for Study Abroad | Excelencia International </title>
         <meta name="description" content="Looking for student visa consultants in Mumbai? Get expert help for study abroad, admissions, visa processing & documentation with trusted consultants." />
+        <link rel="canonical" href="https://excelenciaint.com/" />
       </Helmet>
 
       <HeroSection />

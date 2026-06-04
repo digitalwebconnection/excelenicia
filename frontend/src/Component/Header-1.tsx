@@ -133,7 +133,7 @@ const Header = () => {
             </li>
 
             <li>
-              <NavLink to="/Services" className="hover:text-[#c1972d]">
+              <NavLink to="/services" className="hover:text-[#c1972d]">
                 Services
               </NavLink>
             </li>
@@ -232,7 +232,7 @@ const Header = () => {
             </li>
 
             <li onClick={() => setMenuOpen(false)}>
-              <NavLink to="/Services" className="hover:text-[#c1972d]">
+              <NavLink to="/services" className="hover:text-[#c1972d]">
                 Services
               </NavLink>
             </li>

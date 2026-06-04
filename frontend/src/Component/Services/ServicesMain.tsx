@@ -55,7 +55,7 @@ const ServicesMain = () => {
         {/* CANONICAL */}
         <link
           rel="canonical"
-          href="https://excelenciaint.com/Services"
+          href="https://excelenciaint.com/services"
         />
       </Helmet>
       {/* All services on this page can be opened in a new tab by holding the Ctrl key and right-clicking with your mouse. */}
