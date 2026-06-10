@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Import dummy images
+import img1 from "../../assets/blog/dummy_blog_img1.jpg";
+import img2 from "../../assets/blog/dummy_blog_img2.png";
 
-interface Blog {
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const LOCAL_STORAGE_KEY = 'excelencia_blogs_cache';
+
+export interface Blog {
   _id: string;
   slug: string;
   title: string;
@@ -15,11 +20,59 @@ interface Blog {
   date: string;
   image: string;
   content: string;
+  meta?: {
+    title: string;
+    description: string;
+    keywords: string;
+    canonical: string;
+    longContent: string;
+    schema: string;
+  };
 }
 
+export const dummyBlogs: Blog[] = [
+  {
+    _id: "dummy1",
+    slug: "missed-your-target-in-neet-re-neet-2026",
+    title: "Missed Your Target in NEET? RE-NEET 2026 Gives You Another Chance",
+    excerpt: "A lot of students want to be doctors and NEET is the big test they have to take. Every year many students take this test. They hope to do well but some of them do not get the score they want. If you are not happy with how you did on the test do not worry. RE-NEET 2026 gives students a chance to do better and get into a school.",
+    categories: "RE-NEET",
+    readTime: "5 min",
+    date: "Jun 8, 2026",
+    image: img1,
+    content: "<p>A lot of students want to be doctors and NEET is the big test they have to take. Every year many students take this test. They hope to do well but some of them do not get the score they want. If you are not happy with how you did on the test do not worry. RE-NEET 2026 gives students a chance to do better and get into a school.</p><p>A lot of students want to be doctors and NEET is the big test they have to take. Every year many students take this test. They hope to do well but some of them do not get the score they want. If you are not happy with how you did on the test do not worry. RE-NEET 2026 gives students a chance to do better and get into a school.</p>"
+  },
+  {
+    _id: "dummy2",
+    slug: "mbbs-in-india-vs-mbbs-abroad-which-one-to-choose-in-2026",
+    title: "MBBS In India Vs MBBS Abroad – Which One to Choose in 2026?",
+    excerpt: "Picking up the right medical course is one of the biggest decisions that students have to take after passing their NEET exam. Every year, thousands of students go through MBBS in India vs MBBS abroad to pick up the best course for them. With fewer seats available in government colleges and high tuition fee structure in private institutions, more students are considering MBBS abroad for Indians as an effective and economic option.",
+    categories: "NEET exam",
+    readTime: "5 min",
+    date: "May 22, 2026",
+    image: img2,
+    content: "<p>Picking up the right medical course is one of the biggest decisions that students have to take after passing their NEET exam. Every year, thousands of students go through MBBS in India vs MBBS abroad to pick up the best course for them. With fewer seats available in government colleges and high tuition fee structure in private institutions, more students are considering MBBS abroad for Indians as an effective and economic option.</p><br/><h3>MBBS In India Vs MBBS Abroad – Which One to Choose in 2026?</h3><p>Picking up the right medical course is one of the biggest decisions that students have to take after passing their NEET exam. Every year, thousands of students go through MBBS in India vs MBBS abroad to pick up the best course for them. With fewer seats available in government colleges and high tuition fee structure in private institutions, more students are considering MBBS abroad for Indians as an effective and economic option.</p>"
+  }
+];
+
 const BlogPage = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with cached blogs or dummy data to avoid blank screen while Render wakes up
+  const [blogs, setBlogs] = useState<Blog[]>(() => {
+    const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        // Only use cache if it's an array and has items (or if it's empty from API sync)
+        if (Array.isArray(parsed)) return parsed.length > 0 ? parsed : dummyBlogs;
+      } catch (e) {
+        console.error("Failed to parse cached blogs", e);
+      }
+    }
+    return dummyBlogs;
+  });
+
+  // Only show initial loading spinner if we don't have any blogs to show
+  const [loading, setLoading] = useState(() => blogs.length === 0);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -29,11 +82,14 @@ const BlogPage = () => {
         const data = await res.json();
         if (data.success) {
           setBlogs(data.data);
+          // Sync fresh data to localStorage
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data.data));
         } else {
-          setError(data.message || 'Failed to load blogs');
+          // If we have cached/dummy blogs, don't show an intrusive error, just fail silently
+          if (blogs.length === 0) setError(data.message || 'Failed to load blogs');
         }
       } catch {
-        setError('Failed to fetch blogs. Please try again later.');
+        if (blogs.length === 0) setError('Failed to fetch blogs. Please try again later.');
       } finally {
         setLoading(false);
       }

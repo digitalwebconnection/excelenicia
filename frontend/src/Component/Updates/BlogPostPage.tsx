@@ -3,8 +3,10 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { dummyBlogs } from "./BlogPage";
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const LOCAL_STORAGE_KEY = 'excelencia_blogs_cache';
 
 interface Blog {
   _id: string;
@@ -28,8 +30,27 @@ interface Blog {
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [blog, setBlog] = useState<Blog | null>(null);
-  const [loading, setLoading] = useState(true);
+  
+  const [blog, setBlog] = useState<Blog | null>(() => {
+    let found = null;
+    const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed)) {
+          found = parsed.find(b => b._id === id || b.slug === id);
+        }
+      } catch (e) {
+        console.error("Failed to parse cached blogs", e);
+      }
+    }
+    if (!found) {
+      found = dummyBlogs.find(b => b._id === id || b.slug === id) || null;
+    }
+    return found;
+  });
+
+  const [loading, setLoading] = useState(() => !blog);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -46,16 +67,19 @@ const BlogPostPage = () => {
         const data = await res.json();
         if (data.success) {
           setBlog(data.data);
+          // Optional: We could also update the array cache here if we want, 
+          // but just showing it on detail page is enough for seamless update.
         } else {
-          setError(data.message || 'Blog not found');
+          if (!blog) setError(data.message || 'Blog not found');
         }
       } catch {
-        setError('Failed to load blog post. Please try again later.');
+        if (!blog) setError('Failed to load blog post. Please try again later.');
       } finally {
         setLoading(false);
       }
     };
     if (id) fetchBlog();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   /* ── Loading state ── */
@@ -187,7 +211,7 @@ const BlogPostPage = () => {
 
       {/* ── Bottom Buttons & Call to Action ── */}
       <section className=" px-4 sm:px-6 pb-24">
-        
+
         {/* Premium Back to Articles Button with hover slide arrow animation */}
         <div className="flex justify-center mb-6">
           <Link
