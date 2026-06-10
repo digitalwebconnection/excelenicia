@@ -177,14 +177,12 @@ const BlogPage = () => {
         {!loading && !error && blogs.length > 0 && (
           <motion.div
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
+            animate="show"
             variants={{
               hidden: {},
               show: { transition: { staggerChildren: 0.15 } },
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-
           >
             {blogs.map(blog => (
               <motion.div
