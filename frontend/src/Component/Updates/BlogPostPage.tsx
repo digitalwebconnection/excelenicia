@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
@@ -107,124 +107,55 @@ const BlogPostPage = () => {
         )}
       </Helmet>
 
-      {/* ── Article Hero ── */}
-      <section className="relative w-full  overflow-hidden bg-slate-950">
-        {blog.image ? (
-          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[85vh] overflow-hidden">
-            {/* Hero Image */}
-            <motion.img
-              initial={{ scale: 1.05, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              src={blog.image}
-              alt={blog.title}
-              className="absolute inset-0 w-full h-full object-fill object-center"
-            />
+      {/* ── Article Header ── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-6 bg-white">
+        {/* Back Button */}
+        <Link
+          to="/updates/blog"
+          className="inline-flex items-center text-sm font-medium text-gray-700 border border-gray-200 rounded-lg px-4 py-2 hover:bg-gray-50 transition-colors mb-8 shadow-sm"
+        >
+          <ArrowLeft size={16} className="mr-2" />
+          Back to Blogs
+        </Link>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
+        {/* Meta Info */}
+        <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-500 font-medium">
+          {blog.categories && (
+            <span className="border border-slate-400 text-slate-700 px-4 py-1 rounded-full">
+              {blog.categories}
+            </span>
+          )}
 
-            {/* Top Bar Back Button */}
-            <div className="absolute top-8 left-0 right-0 z-20">
-              <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-                <Link
-                  to="/updates/blog"
-                  className="inline-flex items-center text-white border border-white/80 bg-blue-950/40 px-7 py-2 rounded-full transition-all duration-300 hover:bg-blue-950 hover:border-white group"
-                >
-                  <ArrowLeft
-                    size={16}
-                    className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
-                  />
-                  Back to all articles
-                </Link>
-              </div>
+          {blog.date && (
+            <div className="flex items-center gap-1.5">
+              <Calendar size={16} className="text-gray-400" />
+              <span>{blog.date}</span>
             </div>
+          )}
 
-            {/* Content */}
-            <div className="absolute inset-0 flex items-end z-10">
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-8 sm:pb-8 lg:pb-12"
-              >
-                {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-3 mb-3 sm:mb-5">
-                  {blog.categories && (
-                    <span className="bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                      {blog.categories}
-                    </span>
-                  )}
-
-                  {blog.date && (
-                    <span className="text-white/90 text-sm">
-                      {blog.date}
-                    </span>
-                  )}
-
-                  {blog.readTime && (
-                    <span className="text-white/90 text-sm">
-                      • {blog.readTime}
-                    </span>
-                  )}
-                </div>
-
-                {/* Title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-serif font-bold text-white leading-tight max-w-6xl">
-                  {blog.title}
-                </h1>
-              </motion.div>
+          {blog.readTime && (
+            <div className="flex items-center gap-1.5">
+              <Clock size={16} className="text-gray-400" />
+              <span>{blog.readTime}</span>
             </div>
-          </div>
-        ) : (
-          <div className="relative w-full h-[50vh] md:h-[65vh] bg-gradient-to-br from-blue-950 to-[#c1972d]/60">
-            {/* Top Bar Back Button */}
-            <div className="absolute top-8 left-0 right-0 z-20">
-              <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-                <Link
-                  to="/updates/blog"
-                  className="inline-flex items-center text-white border border-white/80 bg-blue-900/80 px-3 py-2 rounded-full transition-all duration-300 hover:bg-blue-950 hover:border-white group"
-                >
-                  <ArrowLeft
-                    size={16}
-                    className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
-                  />
-                  Back to all articles
-                </Link>
-              </div>
-            </div>
+          )}
+        </div>
 
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 absolute inset-x-0 bottom-0 pb-8 md:pb-16"
-            >
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                {blog.categories && (
-                  <span className="bg-[#c1972d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                    {blog.categories}
-                  </span>
-                )}
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b49] leading-tight mb-8">
+          {blog.title}
+        </h1>
 
-                {blog.date && (
-                  <span className="text-white/90 text-sm">
-                    {blog.date}
-                  </span>
-                )}
-
-                {blog.readTime && (
-                  <span className="text-white/90 text-sm">
-                    • {blog.readTime}
-                  </span>
-                )}
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight max-w-5xl">
-                {blog.title}
-              </h1>
-            </motion.div>
-          </div>
+        {/* Hero Image */}
+        {blog.image && (
+          <motion.img
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            src={blog.image}
+            alt={blog.title}
+            className="w-full h-[500px] object-fit rounded-md"
+          />
         )}
       </section>
 
@@ -232,8 +163,8 @@ const BlogPostPage = () => {
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 py-16"
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 py-8"
       >
         {blog.excerpt && (
           <p className="text-xl text-gray-600 font-serif italic mb-10">

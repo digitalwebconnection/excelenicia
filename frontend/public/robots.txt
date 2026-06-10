@@ -1,0 +1,24 @@
+User-agent: *
+
+
+	Allow: /
+
+	# Block system pages
+	Disallow:/excelenciaint.com/
+	Disallow:/about/
+	Disallow:/Services/
+	Disallow:/contact/
+
+	# Allow important assets
+
+	allow:/destination/uk/ 
+	allow:/destination/uae/
+	allow:/destination/europe/
+	allow:/destination/ireland /
+	allow:/destination/australia/
+	allow:/destination/usa /
+	allow:/destination/canada /
+	allow:/destination/newzealand/
+
+	# Sitemap location
+	Sitemap: https://excelenciaint.com//sitemap.xml
