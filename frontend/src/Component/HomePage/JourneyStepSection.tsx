@@ -14,11 +14,11 @@ export default function JourneyStepSection() {
   ];
 const navigate = useNavigate();
   return (
-    <section className="relative w-full bg-white overflow-hidden py-10">
+    <section className="relative w-full bg-white overflow-hidden py-16 md:py-24">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-0 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         {/* LEFT CONTENT */}
         <div className="relative z-10">
@@ -81,7 +81,7 @@ const navigate = useNavigate();
           >
             <button
              onClick={() => navigate("/contact")}
-              className="px-10 py-3 bg-linear-to-r from-[#c1972d]  to-blue-950 text-white font-bold rounded-sm  transition-all duration-300 shadow-lg hover:shadow-blue-200 hover:-translate-y-1">
+              className="w-full sm:w-auto px-8 md:px-10 py-3 bg-linear-to-r from-[#c1972d] to-blue-950 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-200 hover:-translate-y-1 text-center">
               Learn More About Process
             </button>
           </motion.div>
@@ -111,12 +111,12 @@ const navigate = useNavigate();
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="relative w-full h-100 lg:h-137.5"
+            className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]"
           >
             <img
               src={allfleg}
               alt="Countries We Offer"
-              className="w-full h-full object-contain "
+              className="w-full h-full object-contain"
             />
           </motion.div>
         </motion.div>

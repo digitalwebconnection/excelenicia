@@ -28,7 +28,7 @@ const FinanceSupportSection = () => {
     },
   };
   return (
-    <div className="bg-linear-to-br from-slate-50 to-blue-50 py-10 px-6 lg:px-6 font-sans">
+    <div className="bg-linear-to-br from-slate-50 to-blue-50 pb-16 md:pb-20 px-6 lg:px-6 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
@@ -84,7 +84,7 @@ const FinanceSupportSection = () => {
 
           <div className="space-y-5 text-justify">
             {/* Step 1 */}
-            <motion.div variants={itemVariants} className="relative  flex flex-col md:flex-row items-center md:items-start gap-8">
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
               <div className="md:w-1/2 md:pr-8 md:text-right order-2 md:order-1">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
@@ -112,12 +112,12 @@ const FinanceSupportSection = () => {
                 transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
                 className="absolute left-6 md:left-1/2 w-4 h-4 bg-[#c1972d] rounded-full border-4 border-white shadow-lg transform md:-translate-x-2 order-1 md:order-2 hidden md:block"
               ></motion.div>
-              <div className="md:w-1/2 md:pl-12 order-3"></div>
+              <div className="hidden md:block md:w-1/2 md:pl-12 order-3"></div>
             </motion.div>
 
             {/* Step 2 */}
-            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="md:w-1/2 md:pr-8 order-2"></div>
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
+              <div className="hidden md:block md:w-1/2 md:pr-8 order-2"></div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={timelineInView ? { scale: 1 } : {}}
@@ -128,7 +128,7 @@ const FinanceSupportSection = () => {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className=" hover:bg-linear-to-r from-[#c1972d]  to-blue-950 p-4 rounded-3xl shadow-lg hover:text-white"
+                  className="bg-white hover:bg-linear-to-r from-[#c1972d]  to-blue-950 p-4 rounded-3xl shadow-lg hover:text-white"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <motion.div
@@ -148,12 +148,12 @@ const FinanceSupportSection = () => {
             </motion.div>
 
             {/* Step 3 */}
-            <motion.div variants={itemVariants} className="relative  flex flex-col md:flex-row items-center md:items-start gap-8">
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
               <div className="md:w-1/2 md:pr-8 text-start md:text-right order-2 md:order-1">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100"
+                  className="bg-white hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100"
                 >
                   <div className="flex items-center gap-4 mb-4 md:justify-end">
                     <motion.div
@@ -176,12 +176,12 @@ const FinanceSupportSection = () => {
                 transition={{ delay: 1.1, duration: 0.4, type: "spring" }}
                 className="absolute left-6 md:left-1/2 w-4 h-4 bg-[#c1972d] rounded-full border-4 border-white shadow-lg transform md:-translate-x-2 order-1 md:order-2 hidden md:block"
               ></motion.div>
-              <div className="md:w-1/2 md:pl-12 order-3"></div>
+              <div className="hidden md:block md:w-1/2 md:pl-12 order-3"></div>
             </motion.div>
 
             {/* Step 4 */}
-            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="md:w-1/2 md:pr-8 order-2"></div>
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
+              <div className="hidden md:block md:w-1/2 md:pr-8 order-2"></div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={timelineInView ? { scale: 1 } : {}}
@@ -192,7 +192,7 @@ const FinanceSupportSection = () => {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className=" hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-lg "
+                  className="bg-white  hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-lg "
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <motion.div
@@ -212,18 +212,18 @@ const FinanceSupportSection = () => {
             </motion.div>
 
             {/* Step 5 */}
-            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
               <div className="md:w-1/2 md:pr-8 md:text-right order-2 md:order-1">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100"
+                  className="bg-white hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100"
                 >
                   <div className="flex items-center gap-4 mb-4 md:justify-end">
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className="w-12 h-12 bg-blue-50 text-[#c1972d] rounded-2xl flex items-center justify-center"
+                      className="bg-white w-12 h-12 bg-blue-50 text-[#c1972d] rounded-2xl flex items-center justify-center"
                     >
                       <Lightbulb size={24} />
                     </motion.div>
@@ -240,12 +240,12 @@ const FinanceSupportSection = () => {
                 transition={{ delay: 1.7, duration: 0.4, type: "spring" }}
                 className="absolute left-6 md:left-1/2 w-4 h-4 bg-[#c1972d] rounded-full border-4 border-white shadow-lg transform md:-translate-x-2 order-1 md:order-2 hidden md:block"
               ></motion.div>
-              <div className="md:w-1/2 md:pl-12 order-3"></div>
+              <div className="hidden md:block md:w-1/2 md:pl-12 order-3"></div>
             </motion.div>
 
             {/* /* Step 6 */}
-            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="md:w-1/2 md:pr-8 order-2"></div>
+            <motion.div variants={itemVariants} className="relative flex flex-col md:flex-row items-center md:items-start gap-0 md:gap-8">
+              <div className="hidden md:block md:w-1/2 md:pr-8 order-2"></div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={timelineInView ? { scale: 1 } : {}}
@@ -256,9 +256,9 @@ const FinanceSupportSection = () => {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className=" hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-lg "
+                  className="bg-white hover:bg-linear-to-r from-[#c1972d]  to-blue-950 hover:text-white p-4 rounded-3xl shadow-lg "
                 >
-                  <div className="flex    items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4 mb-4">
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}

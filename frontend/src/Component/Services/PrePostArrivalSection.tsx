@@ -159,7 +159,7 @@ const navigate = useNavigate();
         <div
           className="mb-10"
         >
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-12 px-6 xl:px-0">
             {phases.map((phase, index) => {
               const Icon = phase.icon;
               const isActive = activeTab === index;

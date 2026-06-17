@@ -19,7 +19,7 @@ export default function SplitTruthSection() {
 
       {/* Background glow */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 z-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2000')",  backgroundAttachment: "fixed", backgroundSize: "cover", backgroundPosition: "center" }}/>
+        <div className="absolute inset-0 z-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2000')", backgroundAttachment: "fixed", backgroundSize: "cover", backgroundPosition: "center" }} />
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">

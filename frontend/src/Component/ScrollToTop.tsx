@@ -5,10 +5,15 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // remove "smooth" if you want instant
-    });
+    // Wait for the new route's DOM to render
+    setTimeout(() => {
+      const lenis = (window as any).lenis;
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }, 10);
   }, [pathname]);
 
   return null;

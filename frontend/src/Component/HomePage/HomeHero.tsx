@@ -59,7 +59,7 @@ export default function HeroWithVideoAndSearchForm() {
               muted
               playsInline
               onEnded={handleVideoEnd}
-              className="block md:hidden w-full h-200 object-cover absolute top-0 left-0"
+              className="block md:hidden w-full h-full object-cover absolute top-0 left-0"
             />
             <div className="absolute inset-0 bg-black/0" />
           </motion.div>

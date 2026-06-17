@@ -1,6 +1,23 @@
 import { easeOut, motion } from "framer-motion";
 import { Send, Globe, Target, ArrowUpRight, BookOpen, Newspaper, Trophy } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
+interface Blog {
+    _id: string;
+    slug: string;
+    title: string;
+    excerpt: string;
+    categories: string;
+    readTime: string;
+    date: string;
+    image: string;
+    content: string;
+    desc?: string;
+    icon?: any;
+}
 
 const updates = [
     {
@@ -37,13 +54,32 @@ export default function ExcelenciFormWhite() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [result, setResult] = useState("");
     const [loading, setLoading] = useState(false);
+    const [fetchedBlogs, setFetchedBlogs] = useState<Blog[]>([]);
 
     useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const res = await fetch(`${API_BASE}/blogs`);
+                const data = await res.json();
+                if (data.success && data.data.length > 0) {
+                    setFetchedBlogs(data.data.slice(0, 4)); // Get top 4 blogs
+                }
+            } catch (error) {
+                console.error("Failed to fetch blogs:", error);
+            }
+        };
+        fetchBlogs();
+    }, []);
+
+    const displayItems = fetchedBlogs.length > 0 ? fetchedBlogs : updates;
+
+    useEffect(() => {
+        if (displayItems.length === 0) return;
         const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % updates.length);
+            setActiveIndex((prev) => (prev + 1) % displayItems.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [displayItems.length]);
 
     // ✅ FIXED SUBMIT HANDLER
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -153,7 +189,7 @@ export default function ExcelenciFormWhite() {
                     className="lg:col-span-7 p-2 md:p-4"
                 >
                     <input type="hidden" name="from_name" value="Excelencia Website" />
-                    <input type="hidden" name="subject" value="New Consultation Request" /> 
+                    <input type="hidden" name="subject" value="New Consultation Request" />
 
                     <motion.div variants={itemVariants} className="mb-5">
                         <h3 className="text-3xl md:text-5xl font-bold font-serif text-[#c1972d] mb-2">
@@ -231,9 +267,9 @@ export default function ExcelenciFormWhite() {
                     </div>
 
                     <div className="grid lg:grid-cols-12 gap-2 md:gap-6">
-                        <FeaturedCard item={updates[activeIndex]} />
+                        <FeaturedCard item={displayItems[activeIndex]} />
                         <div className="lg:col-span-6 grid sm:grid-cols-2 gap-6">
-                            {updates.map((item, idx) => (
+                            {displayItems.map((item, idx) => (
                                 <SecondaryCard key={idx} item={item} index={idx} />
                             ))}
                         </div>
@@ -258,21 +294,33 @@ function FormInput({ variants, name, ...props }: { variants: any; name: string;[
 
 // ... FeaturedCard and SecondaryCard remain unchanged ...
 function FeaturedCard({ item }: { item: any }) {
+    if (!item) return null;
+    const blogUrl = item.slug || item._id ? `/updates/blog/${item.slug || item._id}` : "#";
     return (
         <motion.div
             key={item.title}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 group relative bg-slate-900 rounded-lg p-4 md:p-10 overflow-hidden flex flex-col justify-end md:min-h-112 min-h-90 "
+            className="lg:col-span-6 group relative rounded-lg p-4 md:p-10 overflow-hidden flex flex-col justify-end md:min-h-112 min-h-90 bg-slate-900"
         >
+            <Link to={blogUrl} className="absolute inset-0 z-20" aria-label={`Read ${item.title}`} />
+
+            {item.image && (
+                <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 z-0"
+                />
+            )}
+
             <div className="relative z-10">
-                <span className="bg-[#c1972d] text-white text-[10px] px-4 py-1 rounded-full">{item.category}</span>
-                <h3 className= "text-2xl md:text-3xl font-bold text-white mt-2 md:mt-6 mb-4">{item.title}</h3>
-                <p className="text-slate-100 text-md md:text-lg mb-8 max-w-md">{item.desc}</p>
+                <span className="bg-[#c1972d] text-white text-[10px] px-4 py-1 rounded-full">{item.categories || item.category || 'News'}</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mt-2 md:mt-6 mb-4">{item.title}</h3>
+                <p className="text-slate-100 text-md md:text-lg mb-8 max-w-md line-clamp-3">{item.excerpt || item.desc}</p>
                 <div className="flex justify-between border-t border-white/10 pt-6">
                     <span className="text-slate-200 text-sm">{item.date}</span>
-                    <button className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                    <button className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-black">
                         <ArrowUpRight size={22} />
                     </button>
                 </div>
@@ -282,19 +330,22 @@ function FeaturedCard({ item }: { item: any }) {
 }
 
 function SecondaryCard({ item, index }: { item: any; index: number }) {
+    if (!item) return null;
+    const blogUrl = item.slug || item._id ? `/updates/blog/${item.slug || item._id}` : "#";
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="group bg-slate-100 border border-[#c1972d] p-4 md:p-8 rounded-lg hover:shadow-xl transition"
+            className="group relative bg-slate-100 border border-[#c1972d] p-4 md:p-8 rounded-lg hover:shadow-xl transition"
         >
-            <div className="text-[#c1972d] mb-6 p-3 bg-white w-fit rounded-2xl shadow-sm">{item.icon}</div>
-            <h3 className="text-lg md:text-xl font-bold text-[#c1972d] leading-snug">{item.title}</h3>
-            <p className="text-blue-950 text-sm mt-4 text-justify">{item.desc}</p>
-            <div className="mt-6 flex justify-between text-xs  ">
+            <Link to={blogUrl} className="absolute inset-0 z-10" aria-label={`Read ${item.title}`} />
+            <div className="text-[#c1972d] mb-6 p-3 bg-white w-fit rounded-2xl shadow-sm">{item.icon || <Newspaper size={20} />}</div>
+            <h3 className="text-lg md:text-xl font-bold text-[#c1972d] leading-snug line-clamp-2">{item.title}</h3>
+            <p className="text-blue-950 text-sm mt-4 text-justify line-clamp-3">{item.excerpt || item.desc}</p>
+            <div className="mt-6 flex justify-between text-xs relative z-20 pointer-events-none">
                 <span className="text-blue-950">{item.date}</span>
-                <span className="flex items-center gap-1">Read <ArrowUpRight size={14} /></span>
+                <span className="flex items-center gap-1 group-hover:text-[#c1972d] transition-colors">Read <ArrowUpRight size={14} /></span>
             </div>
         </motion.div>
     );

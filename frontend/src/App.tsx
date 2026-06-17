@@ -26,6 +26,8 @@ function App() {
       touchMultiplier: 1.5,  // Snappy on mobile touch
       infinite: false,
     });
+    
+    (window as any).lenis = lenis;
 
     let raf: number;
     const loop = (time: number) => {
@@ -37,6 +39,7 @@ function App() {
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, []);
 

@@ -20,9 +20,9 @@ const AdmissionService = () => {
                     <h1 className="text-3xl md:text-5xl font-serif font-extrabold text-[#c1972d] mb-6  tracking-tight">
                         Admission <span className="text-blue-950">Assistance</span>
                     </h1>
-                    <div className="flex justify-center items-center gap-2 text-blue-950 font-medium ">
-                        <MapPin size={18} className="text-[#c1972d]" />
-                        Our Foreign Education Consultancy in Mumbai, Bandra
+                    <div className="flex justify-center items-center gap-2 text-blue-950 font-medium flex-wrap text-center">
+                        <MapPin size={18} className="text-[#c1972d] shrink-0" />
+                        <span>Our Foreign Education Consultancy in Mumbai, Bandra</span>
                     </div>
                 </header>
 

@@ -23,6 +23,13 @@ const DEFAULT_DESTINATIONS = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [clickedDropdown, setClickedDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = () => setClickedDropdown(null);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   const [destinations, setDestinations] = useState<{ name: string; path: string }[]>(() => {
     const cached = localStorage.getItem("destinations_cache");
@@ -90,12 +97,15 @@ const Header = () => {
             </li>
 
             {/* 🔥 DESTINATION DROPDOWN */}
-            <li className="relative group">
-              <span className="cursor-pointer hover:text-[#c1972d]">
+            <li className="relative group" onClick={(e) => e.stopPropagation()}>
+              <span 
+                className="cursor-pointer hover:text-[#c1972d]"
+                onClick={() => setClickedDropdown(clickedDropdown === 'destination' ? null : 'destination')}
+              >
                 Destination
               </span>
 
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className={`absolute top-full left-0 bg-white shadow-lg rounded-xl transition-all duration-300 ${clickedDropdown === 'destination' ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
                 <ul className="flex flex-col p-4 gap-3 min-w-50">
 
                   {destinations.map((item, i) => (
@@ -103,6 +113,7 @@ const Header = () => {
                       key={i}
                       to={`/destination/${item.path}`}
                       className="hover:text-[#c1972d]"
+                      onClick={() => setClickedDropdown(null)}
                     >
                       {item.name}
                     </NavLink>
@@ -115,16 +126,20 @@ const Header = () => {
             <li className="opacity-50 cursor-not-allowed">Collaborate</li>
 
             {/* 🔥 UPDATES DROPDOWN */}
-            <li className="relative group">
-              <span className="cursor-pointer hover:text-[#c1972d]">
+            <li className="relative group" onClick={(e) => e.stopPropagation()}>
+              <span 
+                className="cursor-pointer hover:text-[#c1972d]"
+                onClick={() => setClickedDropdown(clickedDropdown === 'updates' ? null : 'updates')}
+              >
                 Updates
               </span>
 
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className={`absolute top-full left-0 bg-white shadow-lg rounded-xl transition-all duration-300 ${clickedDropdown === 'updates' ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
                 <ul className="flex flex-col p-4 gap-3 min-w-40">
                   <NavLink
                     to="/updates/blog"
                     className="hover:text-[#c1972d]"
+                    onClick={() => setClickedDropdown(null)}
                   >
                     Blog
                   </NavLink>

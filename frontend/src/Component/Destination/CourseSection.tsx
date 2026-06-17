@@ -38,7 +38,7 @@ const CourseSection = ({ data }: CourseSectionProps) => {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
   return (
-    <section className=" py-24 px-6">
+    <section className=" py-8 x-6">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}

@@ -13,7 +13,7 @@ export default function ContactHero() {
   };
 
   return (
-    <section className="relative py-10 flex items-center justify-center overflow-hidden  text-white  px-6">
+    <section className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden text-white px-6">
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -46,7 +46,7 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-3xl md:text-7xl font-serif font-extrabold tracking-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold tracking-tight mb-6"
           >
             Let’s build something{" "}
             <span className="text-[#c1972d]">together.</span>
@@ -57,14 +57,14 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-md md:text-lg text-slate-100 leading-relaxed"
+            className="text-base md:text-lg text-slate-100 leading-relaxed"
           >
             Whether you're in Mumbai or Dubai, our global team is ready to provide
             the guidance and technical solutions your business deserves.
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
           {/* Contact Methods */}
           <motion.div
@@ -72,7 +72,7 @@ export default function ContactHero() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="lg:col-span-1 space-y-4"
+            className="col-span-1 space-y-4 md:space-y-6 flex flex-col h-full"
           >
             <ContactMethodCard
               icon={<Mail size={24} />}
@@ -123,15 +123,15 @@ function ContactMethodCard({ icon, label, value, href }: ContactMethodProps) {
   return (
     <a
       href={href}
-      className="flex items-center gap-5 p-4 md:p-8 rounded-lg bg-black/30  backdrop-blur-md border border-white/10 hover:border-[#c1972d]/50 hover:bg-white/10 transition-all group"
+      className="flex items-center gap-4 md:gap-5 p-5 md:p-6 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 hover:border-[#c1972d]/50 hover:bg-white/10 transition-all group flex-1"
     >
-      <div className="p-3 rounded-xl bg-[#c1972d]/10 text-[#c1972d] group-hover:scale-110 transition-transform">
+      <div className="p-3 rounded-xl bg-[#c1972d]/10 text-[#c1972d] group-hover:scale-110 transition-transform shrink-0">
         {icon}
       </div>
 
-      <div>
-        <p className="text-sm text-slate-400">{label}</p>
-        <p className="font-medium text-white">{value}</p>
+      <div className="overflow-hidden">
+        <p className="text-xs md:text-sm text-slate-400">{label}</p>
+        <p className="text-sm md:text-base font-medium text-white break-all">{value}</p>
       </div>
     </a>
   );
@@ -161,27 +161,27 @@ function LocationCard({ country, address, tag, index, mapUrl }: LocationCardProp
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="relative group overflow-hidden rounded-lg bg-black/30 backdrop-blur-md border border-white/10 p-4 md:p-6 hover:border-[#c1972d]/60 transition-colors cursor-pointer h-full"
+      className="relative group overflow-hidden rounded-xl bg-black/30 backdrop-blur-md border border-white/10 p-6 md:p-8 hover:border-[#c1972d]/60 transition-colors cursor-pointer h-full flex flex-col"
     >
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col h-full">
 
-        <div className="flex justify-between items-start mb-4">
+        <div className="flex justify-between items-start mb-4 md:mb-6">
           <div className="p-3 rounded-full bg-white/10 text-[#c1972d]">
             <MapPin size={24} />
           </div>
 
-          <span className="text-[10px]  border border-white   tracking-widest font-bold text-[#c1972d] bg-[#c1972d]/10 px-3 py-1 rounded-full">
+          <span className="text-[10px]  border border-white   tracking-widest font-bold text-[#c1972d] bg-[#c1972d]/10 px-3 py-1 rounded-full shrink-0 ml-2">
             {tag}
           </span>
         </div>
 
-        <h2 className="text-3xl font-bold font-serif text-[#c1972d] mb-4">{country}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold font-serif text-[#c1972d] mb-3 md:mb-4">{country}</h2>
 
-        <p className="text-slate-100 text-sm leading-relaxed mb-4 ">
+        <p className="text-slate-100 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
           "{address}"
         </p>
 
-        <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-[#c1972d] transition-colors">
+        <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-[#c1972d] transition-colors mt-auto">
           View on Map
           <ArrowRight
             size={16}

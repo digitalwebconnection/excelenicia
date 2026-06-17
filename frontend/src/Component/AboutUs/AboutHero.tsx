@@ -96,17 +96,18 @@ const navigate = useNavigate();
             </p>
 
             {/* CTA */}
-            <div className="mt-5 md:mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
               <button
                onClick={() => navigate("/contact")}
-              className="px-3 md:px-10 py-1 md:py-3 rounded-full bg-[#c1972d] text-[#ffffff]
-                font-semibold hover:scale-105 transition shadow-lg">
+              className="w-full sm:w-auto px-6 md:px-10 py-3 rounded-full bg-[#c1972d] text-white
+                font-bold hover:scale-105 transition shadow-lg text-center">
                 Apply Now →
               </button>
 
               <a
-              href="tel:+919769787211"   className="px-3 md:px-10 py-1 md:py-3 rounded-full border border-white/30
-                text-white hover:bg-white/10 transition backdrop-blur-sm">
+              href="tel:+919769787211"   
+              className="w-full sm:w-auto px-6 md:px-10 py-3 rounded-full border border-white/30
+                text-white font-semibold hover:bg-white/10 transition backdrop-blur-sm text-center block">
                 Free Consultation
               </a>
             </div>

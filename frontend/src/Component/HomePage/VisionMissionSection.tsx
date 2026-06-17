@@ -194,7 +194,7 @@ export function CoreValuesSection() {
                 className={`relative flex w-full ${isLeft ? "justify-start" : "justify-end"}`}
               >
                 {/* The Card */}
-                <div className="relative w-full md:w-[90%] bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-slate-200 border border-slate-900/40">
+                <div className={`relative w-full md:w-[90%] bg-white py-6 md:py-8 rounded-2xl shadow-xl shadow-slate-200 border border-slate-900/40 ${isLeft ? "pl-6 md:pl-8 pr-16 md:pr-24" : "pr-6 md:pr-8 pl-16 md:pl-24"}`}>
 
                   {/* Floating Icon Holder */}
                   <div
@@ -206,7 +206,7 @@ export function CoreValuesSection() {
                   </div>
 
                   {/* Content */}
-                  <div className={`max-w-5xl ${isLeft ? "text-left" : "text-left md:ml-auto ps-6"}`}>
+                  <div className="max-w-5xl text-left">
 
                     <h3 className="text-2xl md:text-3xl font-bold text-blue-950 mb-2 font-serif ">
                       {value.title}
@@ -216,10 +216,6 @@ export function CoreValuesSection() {
                     </p>
                   </div>
 
-                  {/* Decorative background number */}
-                  <span className="absolute bottom-6 right-10 text-8xl font-black text-slate-50 select-none pointer-events-none">
-                    {index + 1}
-                  </span>
                 </div>
               </motion.div>
             );
