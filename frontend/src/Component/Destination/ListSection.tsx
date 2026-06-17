@@ -65,7 +65,7 @@ const IntakeSection = ({ data }: IntakeSectionProps) => {
                   <div className="flex flex-wrap items-center gap-3 mb-2">
 
                     {/* Intake Name */}
-                    <h3 className="text-2xl font-bold text-blue-950 group-hover:text-white">
+                    <h3 className="text-2xl font-serif font-bold text-blue-950 group-hover:text-white">
                       {item.name}
                     </h3>
 
