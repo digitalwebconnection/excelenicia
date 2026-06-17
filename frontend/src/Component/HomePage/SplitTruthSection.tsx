@@ -35,7 +35,7 @@ export default function SplitTruthSection() {
             <span className="text-[#c1972d]"> No Hidden Agendas.</span>
           </h2>
 
-          <p className="text-slate-2  00 mt-4 max-w-2xl mx-auto">
+          <p className="text-white mt-4 max-w-2xl mx-auto">
             Our goal is simple — help students make informed decisions
             about their international education.
           </p>

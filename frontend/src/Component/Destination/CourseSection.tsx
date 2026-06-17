@@ -53,9 +53,9 @@ const CourseSection = ({ data }: CourseSectionProps) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {data.list.map((course, i) => (
-            <div 
-              key={i} 
-              className="group perspective-[1000px] cursor-pointer h-100" 
+            <div
+              key={i}
+              className="group perspective-[1000px] cursor-pointer h-100"
               onClick={() => setFlippedIndex(flippedIndex === i ? null : i)}
             >
               <div className={`relative h-full w-full transition-transform duration-700 transform-3d md:group-hover:transform-[rotateY(180deg)] ${flippedIndex === i ? "transform-[rotateY(180deg)]" : ""}`}>
@@ -101,7 +101,7 @@ const CourseSection = ({ data }: CourseSectionProps) => {
                 </div>
 
                 {/* BACK SIDE */}
-                <div 
+                <div
                   className="absolute inset-0 bg-linear-to-r from-[#c1972d] to-blue-950 text-white rounded-3xl p-7 md:p-8 shadow-xl transform-[rotateY(180deg)] backface-hidden overflow-y-auto overscroll-contain custom-scrollbar"
                 >
 

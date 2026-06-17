@@ -36,7 +36,7 @@ const IntakeSection = ({ data }: IntakeSectionProps) => {
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-[#c1972d] tracking-tight">
+          <h2 className="text-5xl font-bold text-[#c1972d] tracking-tight font-serif">
             {data.title}
           </h2>
           {data.subtitle && (

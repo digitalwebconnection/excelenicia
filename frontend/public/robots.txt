@@ -1,15 +1,14 @@
 User-agent: *
 
-
 	Allow: /
 
-	# Block system pages
-	Disallow:/excelenciaint.com/
+	# Block admin and system pages
 	Disallow:/about/
-	Disallow:/Services/
 	Disallow:/contact/
 
 	# Allow important assets
+	allow:/excelenciaint.com/
+	allow:/excelenciaint.com/
 
 	allow:/destination/uk/ 
 	allow:/destination/uae/
@@ -19,6 +18,49 @@ User-agent: *
 	allow:/destination/usa /
 	allow:/destination/canada /
 	allow:/destination/newzealand/
+
+	User-agent: GPTBot
+	Allow: /
+
+	User-agent: ChatGPT-User
+	Allow: /
+
+	User-agent: ClaudeBot
+	Allow: /
+
+	User-agent: Claude-SearchBot
+	Allow: /
+
+	User-agent: PerplexityBot
+	Allow: /
+
+	User-agent: Google-Extended
+	Allow: /
+
+	User-agent: Googlebot
+	Allow: /
+
+	User-agent: Bingbot
+	Allow: /
+
+	User-agent: Applebot
+	Allow: /
+
+	User-agent: Amazonbot
+	Allow: /
+
+	User-agent: FacebookBot
+	Allow: /
+
+	User-agent: OAI-SearchBot
+	Allow: /
+
+	User-agent: Bytespider
+	Allow: /
+
+	# Crawl delay (optional)
+	User-agent: *
+	Crawl-delay: 5 
 
 	# Sitemap location
 	Sitemap: https://excelenciaint.com//sitemap.xml

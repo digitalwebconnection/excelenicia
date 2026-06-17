@@ -61,7 +61,7 @@ const EducationSection = ({ data }: SectionProps) => {
               <div
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className="flex items-start gap-6 cursor-pointer group"
+                className="flex items-start gap-6 cursor-pointer group  "
               >
                 {/* DOT */}
                 <div className="relative">
@@ -112,7 +112,7 @@ const EducationSection = ({ data }: SectionProps) => {
             transition={{ duration: 0.6 }}
           >
 
-            <h3 className="text-3xl md:text-4xl font-bold text-[#c1972d] mt-2 mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#c1972d] mt-2 mb-6 font-serif">
               {data.sections[activeIndex]?.title}
             </h3>
 
