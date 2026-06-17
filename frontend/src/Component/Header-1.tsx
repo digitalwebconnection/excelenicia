@@ -4,20 +4,14 @@ import { Menu, X } from "lucide-react";
 import logo from "../assets/image1.png";
 
 const DEFAULT_DESTINATIONS = [
-  { name: "United Kingdom", path: "uk" },
+  { name: "UK", path: "uk" },
+  { name: "UAE", path: "uae" },
+  { name: "Europe", path: "europe" },
+  { name: "Ireland", path: "ireland" },
+  { name: "Australia", path: "australia" },
   { name: "USA", path: "usa" },
   { name: "Canada", path: "canada" },
-  { name: "Germany", path: "germany" },
-  { name: "Australia", path: "australia" },
-  { name: "UAE", path: "uae" },
-  { name: "France", path: "france" },
-  { name: "Italy", path: "italy" },
-  { name: "Spain", path: "spain" },
-  { name: "New Zealand", path: "new-zealand" },
-  { name: "Malta", path: "malta" },
-  { name: "Latvia", path: "latvia" },
-  { name: "Lithuania", path: "lithuania" },
-  { name: "Austria", path: "austria" }
+  { name: "New Zealand", path: "new-zealand" }
 ];
 
 const Header = () => {

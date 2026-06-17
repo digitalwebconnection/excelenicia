@@ -90,7 +90,7 @@ const destinations = [
 export default function CountrySlider() {
   return (
     <section className="py-10 bg-white overflow-hidden">
-      
+
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6 mb-14 text-center">
         <p className="text-blue-950 font-bold tracking-widest mb-3 text-lg">
@@ -107,7 +107,7 @@ export default function CountrySlider() {
 
       {/* Slider */}
       <div className="relative overflow-hidden">
-        
+
         <div
           className="flex gap-6 w-max slider-track"
           onMouseEnter={(e) => {
@@ -118,12 +118,12 @@ export default function CountrySlider() {
           }}
         >
           {[...destinations, ...destinations].map((item, index) => (
-            
+
             <div
               key={index}
               className="min-w-[300px] h-[420px] rounded-3xl overflow-hidden relative group shrink-0"
             >
-              
+
               <img
                 src={item.image}
                 alt={item.name}
@@ -135,13 +135,13 @@ export default function CountrySlider() {
 
               {/* Content */}
               <div className="absolute bottom-0 p-6 w-full">
-                
+
                 <h3 className="text-2xl font-bold text-white">
                   {item.name}
                 </h3>
 
                 <div className="flex justify-between items-center mt-2">
-                  
+
                   <p className="text-blue-100 text-sm opacity-0 group-hover:opacity-100 transition duration-300">
                     {item.listings}
                   </p>
