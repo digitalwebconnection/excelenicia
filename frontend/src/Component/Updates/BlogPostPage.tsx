@@ -60,7 +60,12 @@ const BlogPostPage = () => {
         const res = await fetch(endpoint);
         const data = await res.json();
         if (data.success) {
-          setBlog(data.data);
+          setBlog(prev => {
+            const currentString = JSON.stringify(prev);
+            const newString = JSON.stringify(data.data);
+            if (currentString === newString) return prev; // Avoid unnecessary re-renders
+            return data.data;
+          });
           setError('');
         } else if (!blog) {
           setError('Blog not found');

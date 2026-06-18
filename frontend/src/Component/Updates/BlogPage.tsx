@@ -34,7 +34,12 @@ const BlogPage = () => {
         const res = await fetch(`${API_BASE}/blogs`);
         const data = await res.json();
         if (data.success) {
-          setBlogs(data.data);
+          setBlogs(prev => {
+            const currentString = JSON.stringify(prev);
+            const newString = JSON.stringify(data.data);
+            if (currentString === newString) return prev; // Avoid unnecessary re-renders and flickers
+            return data.data;
+          });
           try {
             localStorage.setItem('ts_cached_blogs', JSON.stringify(data.data));
           } catch (e) {
@@ -60,7 +65,7 @@ const BlogPage = () => {
     <div className="w-full min-h-screen bg-gray-50 pb-20">
 
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] bg-black flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] bg-[#1a2b49] flex items-center justify-center overflow-hidden">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.5 }}
@@ -128,14 +133,12 @@ const BlogPage = () => {
         {!loading && blogs.length > 0 && (
           <motion.div
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
+            animate="show"
             variants={{
               hidden: {},
               show: { transition: { staggerChildren: 0.15 } },
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-
           >
             {blogs.map(blog => (
               <motion.div
