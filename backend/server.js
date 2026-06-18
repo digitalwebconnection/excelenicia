@@ -12,7 +12,13 @@ connectDB();
 const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'];
 if (process.env.FRONTEND_URL) {
   const origins = process.env.FRONTEND_URL.split(',').map(url => url.trim().replace(/\/$/, ""));
-  allowedOrigins.push(...origins);
+  origins.forEach(origin => {
+    allowedOrigins.push(origin);
+    // Automatically allow 'www.' variant if not already present and it's a root domain
+    if (origin.startsWith('https://') && !origin.startsWith('https://www.')) {
+      allowedOrigins.push(origin.replace('https://', 'https://www.'));
+    }
+  });
 }
 
 app.use(cors({

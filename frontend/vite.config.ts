@@ -7,6 +7,8 @@ export default defineConfig({
     react(), tailwindcss(),
   ],
   build: {
+    target: 'es2015',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks(id) {

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { staticBlogs } from "../../lib/staticBlogs";
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -18,9 +19,14 @@ interface Blog {
 }
 
 const BlogPage = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [blogs, setBlogs] = useState<Blog[]>(() => {
+    try {
+      const cached = localStorage.getItem('ts_cached_blogs');
+      if (cached) return JSON.parse(cached);
+    } catch (err) {}
+    return staticBlogs;
+  });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -29,15 +35,24 @@ const BlogPage = () => {
         const data = await res.json();
         if (data.success) {
           setBlogs(data.data);
-        } else {
-          setError(data.message || 'Failed to load blogs');
+          try {
+            localStorage.setItem('ts_cached_blogs', JSON.stringify(data.data));
+          } catch (e) {
+            // Ignore localStorage errors
+          }
         }
       } catch {
-        setError('Failed to fetch blogs. Please try again later.');
+        // Silently fail and continue showing the already-loaded static/cached blogs
       } finally {
         setLoading(false);
       }
     };
+    
+    // Only show loading skeletons if we don't have any blogs yet
+    if (blogs.length === 0) {
+      setLoading(true);
+    }
+    
     fetchBlogs();
   }, []);
 
@@ -101,16 +116,8 @@ const BlogPage = () => {
           </div>
         )}
 
-        {/* Error state */}
-        {!loading && error && (
-          <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="text-5xl mb-4">⚠️</div>
-            <p className="text-red-600 font-medium">{error}</p>
-          </div>
-        )}
-
         {/* Empty state */}
-        {!loading && !error && blogs.length === 0 && (
+        {!loading && blogs.length === 0 && (
           <div className="flex flex-col items-center justify-center py-20 text-center text-gray-500">
             <div className="text-5xl mb-4">📝</div>
             <p className="text-xl">No blog posts yet. Check back soon!</p>
@@ -118,7 +125,7 @@ const BlogPage = () => {
         )}
 
         {/* Blog cards */}
-        {!loading && !error && blogs.length > 0 && (
+        {!loading && blogs.length > 0 && (
           <motion.div
             initial="hidden"
             whileInView="show"

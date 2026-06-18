@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { staticBlogs } from "../../lib/staticBlogs";
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -28,15 +29,29 @@ interface Blog {
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [blog, setBlog] = useState<Blog | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [blog, setBlog] = useState<Blog | null>(() => {
+    let foundBlog = null;
+    try {
+      const cached = localStorage.getItem('ts_cached_blogs');
+      if (cached) {
+        const blogs = JSON.parse(cached);
+        foundBlog = blogs.find((b: any) => b._id === id || b.slug === id);
+      }
+    } catch (err) {}
+    
+    if (!foundBlog) {
+      foundBlog = staticBlogs.find((b: any) => b._id === id || b.slug === id);
+    }
+    return foundBlog ? (foundBlog as Blog) : null;
+  });
+  
+  // Set loading to false initially if we found the blog locally, otherwise true
+  const [loading, setLoading] = useState<boolean>(() => !blog);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        // If it looks like a MongoDB ObjectId (24-char hex), use /:id
-        // Otherwise use /slug/:slug for clean URL slugs
         const isObjectId = /^[a-f\d]{24}$/i.test(id || '');
         const endpoint = isObjectId
           ? `${API_BASE}/blogs/${id}`
@@ -46,17 +61,18 @@ const BlogPostPage = () => {
         const data = await res.json();
         if (data.success) {
           setBlog(data.data);
-        } else {
-          setError(data.message || 'Blog not found');
+          setError('');
+        } else if (!blog) {
+          setError('Blog not found');
         }
       } catch {
-        setError('Failed to load blog post. Please try again later.');
+        if (!blog) setError('Blog not found');
       } finally {
         setLoading(false);
       }
     };
     if (id) fetchBlog();
-  }, [id]);
+  }, [id, blog]);
 
   /* ── Loading state ── */
   if (loading) {
