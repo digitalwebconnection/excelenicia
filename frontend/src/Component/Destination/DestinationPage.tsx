@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "./Hero";
@@ -84,14 +84,7 @@ const DestinationPage = () => {
     </div>
   );
 
-  if (error || !pageData) return (
-    <div className="flex items-center justify-center min-h-[60vh]">
-      <div className="text-center">
-        <p className="text-3xl font-bold text-blue-950 mb-3">Destination Not Found</p>
-        <p className="text-gray-500">{error || "This country hasn't been added yet."}</p>
-      </div>
-    </div>
-  );
+  if (error || !pageData) return <Navigate to="/404" replace />;
 
   return (
     <>

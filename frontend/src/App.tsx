@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 import Header from "./Component/Header-1";
 import Footer from "./Component/Footer-1";
@@ -16,6 +16,22 @@ import CookieConsent from "./Component/CookieConsent";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
 import BlogPage from "./Component/Updates/BlogPage";
 import BlogPostPage from "./Component/Updates/BlogPostPage";
+import NotFound from "./Component/NotFound";
+
+function PublicLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <FlightAnimation />
+      <Header />
+      <main className="pt-20">{children}</main>
+      <Footer />
+      <ScrollToTop />
+      <WhatsAppWidget />
+      {/* 🍪 Cookie Consent Banner */}
+      <CookieConsent />
+    </>
+  );
+}
 
 function App() {
   useEffect(() => {
@@ -44,38 +60,27 @@ function App() {
   }, []);
 
   return (
-    <>
-      {/* Admin route — completely standalone, no header/footer */}
-      <Routes>
-        <Route path="/admin/*" element={<AdminApp />} />
+    <Routes>
+      {/* Standalone Admin app */}
+      <Route path="/admin/*" element={<AdminApp />} />
 
-        {/* Public routes */}
-        <Route path="/*" element={
-          <>
-            <FlightAnimation />
-            <Header />
-            <main className="pt-20">
-              <Routes>
-                <Route path="/" element={<HomeMain />} />
-                <Route path="/about" element={<AboutUsMain />} />
-                <Route path="/services" element={<ServicesMain />} />
-                <Route path="/destination/:country" element={<DestinationPage />} />
-                <Route path="/contact" element={<ContactUsMain />} />
-                <Route path="/updates/blog" element={<BlogPage />} />
-                <Route path="/updates/blog/:id" element={<BlogPostPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              </Routes>
-            </main>
-            <Footer />
-            <ScrollToTop />
-            <WhatsAppWidget />
-            {/* 🍪 Cookie Consent Banner */}
-            <CookieConsent />
-          </>
-        } />
-        {/* <Route path="/leandingpage" element={<HomeMain/>}/> */}
-      </Routes>
-    </>
+      {/* Standalone 404 page — NO Header, NO Footer */}
+      <Route path="/404" element={<NotFound />} />
+
+      {/* Public routes wrapped with Header and Footer */}
+      <Route path="/" element={<PublicLayout><HomeMain /></PublicLayout>} />
+      <Route path="/about" element={<PublicLayout><AboutUsMain /></PublicLayout>} />
+      <Route path="/about-us" element={<Navigate to="/about" replace />} />
+      <Route path="/services" element={<PublicLayout><ServicesMain /></PublicLayout>} />
+      <Route path="/destination/:country" element={<PublicLayout><DestinationPage /></PublicLayout>} />
+      <Route path="/contact" element={<PublicLayout><ContactUsMain /></PublicLayout>} />
+      <Route path="/updates/blog" element={<PublicLayout><BlogPage /></PublicLayout>} />
+      <Route path="/updates/blog/:id" element={<PublicLayout><BlogPostPage /></PublicLayout>} />
+      <Route path="/privacy-policy" element={<PublicLayout><PrivacyPolicy /></PublicLayout>} />
+
+      {/* Any unrecognised route displays the standalone 404 page (NO Header, NO Footer) */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
