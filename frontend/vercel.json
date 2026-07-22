@@ -1,5 +1,16 @@
 {
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.excelenciaint.com"
+        }
+      ],
+      "destination": "https://excelenciaint.com/:path*",
+      "permanent": true
+    },
     { "source": "/about-us", "destination": "/about", "permanent": true },
     { "source": "/about-us/", "destination": "/about", "permanent": true }
   ],
